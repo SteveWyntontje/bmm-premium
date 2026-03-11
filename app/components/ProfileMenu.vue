@@ -73,7 +73,7 @@ const { data: user } = useCurrentUser();
         <FadeInImage
           v-if="auth0User.picture"
           :src="auth0User.picture"
-          :alt="auth0User.name || ''"
+          :alt="auth0User.name || 'Profile picture'"
           class="aspect-square w-6 rounded-full object-cover"
         />
         <Icon v-else name="nav.profile" class="ml-1 text-xl" />
@@ -161,6 +161,10 @@ const { data: user } = useCurrentUser();
           <DropdownMenuItem
             :title="$t('track.details.copyright')"
             :to="{ name: 'copyright' }"
+          />
+          <DropdownMenuItem
+          :title="$t('track.details.about')"
+          :to="{ name: 'about' }"
           />
         </DropdownMenuGroup>
         <DropdownMenuGroup>

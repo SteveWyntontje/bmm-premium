@@ -35,7 +35,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  spaLoadingTemplate: "spa-loading-template.html",
+  spaLoadingTemplate: true,
   i18n: {
     strategy: "no_prefix",
     skipSettingLocaleOnNavigate: true,

@@ -6,7 +6,6 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "noUncheckedIndexedAccess": true,
-    "verbatimModuleSyntax": true, // Can be removed after updating nuxt to v3.8
     "exactOptionalPropertyTypes": false // disabled because of https://github.com/vuejs/core/issues/6532
   }
 }
