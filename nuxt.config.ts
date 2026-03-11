@@ -6,7 +6,7 @@ const modules: NuxtConfig["modules"] = [
   "@nuxt/devtools",
   "@nuxt/eslint",
   "~~/modules/figma2tailwind/index.ts", // Must be placed before "@nuxtjs/tailwindcss"
-  "~~/modules/icons/module.ts",
+  "@nuxt/icon",
   "@nuxtjs/tailwindcss",
   "@nuxtjs/i18n",
   "@nuxtjs/color-mode",
@@ -40,6 +40,16 @@ export default defineNuxtConfig({
     strategy: "no_prefix",
     skipSettingLocaleOnNavigate: true,
     defaultLocale: "en",
+  },
+  icon: {
+    customCollections: [
+      {
+        dir: "./app/assets/icons",
+        prefix: "",
+        recursive: true,
+        normalizeIconName: false
+      },
+    ],
   },
   imports: {
     dirs: ["stores"],

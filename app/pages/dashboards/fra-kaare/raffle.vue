@@ -241,7 +241,7 @@ const {
           title="Vis vinner i fullskjerm"
           @click="toggleFullscreen"
         >
-          <NuxtIcon name="fullscreen" />
+          <Icon name="fullscreen" />
         </button>
         <div
           v-if="isFullscreen"

@@ -37,7 +37,7 @@ watch(height, (h) => {
         style="-webkit-app-region: no-drag"
         @click="$router.back()"
       >
-        <NuxtIcon name="icon.chevron.left-1" class="text-2xl" />
+        <Icon name="icon.chevron.left-1" class="text-2xl" />
       </div>
       <strong
         v-if="toolbarTitleStore().toolbarTitle"

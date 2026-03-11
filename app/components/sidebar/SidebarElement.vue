@@ -25,7 +25,6 @@ type Tool = {
   show: boolean;
 };
 const tools = computed<Tool[]>(() => {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   const items = [
     {
       id: "lyrics",
@@ -52,14 +51,14 @@ const tools = computed<Tool[]>(() => {
       class="flex h-full flex-col justify-center pr-6 md:hidden"
       @click="hamburgerOpen = !hamburgerOpen"
     >
-      <NuxtIcon name="icon.hamburger" class="fill-label-1 text-2xl" />
+      <Icon name="icon.hamburger" class="fill-label-1 text-2xl" />
     </div>
   </Teleport>
   <Teleport v-if="isMounted && hamburgerOpen" to=".container .teleport">
     <div
       class="fixed inset-0 z-40 bg-[#000000]/[0.6]"
       @click="hamburgerOpen = !hamburgerOpen"
-    ></div>
+    />
   </Teleport>
   <aside
     class="fixed bottom-0 top-0 z-50 max-h-screen w-[300px] flex-none flex-col border-r border-label-separator bg-background-2 shadow-2xl transition-all duration-200 ease-in-out md:relative"
@@ -77,7 +76,7 @@ const tools = computed<Tool[]>(() => {
           class="ml-[-4px] mt-[3px] md:hidden"
           @click="hamburgerOpen = !hamburgerOpen"
         >
-          <NuxtIcon name="icon.hamburger" class="fill-label-1 text-2xl" />
+          <Icon name="icon.hamburger" class="fill-label-1 text-2xl" />
         </div>
         <SiteLogo size="small" />
         <span
@@ -144,7 +143,7 @@ const tools = computed<Tool[]>(() => {
                 : 'icon.category.playlist'
             "
           />
-          <SidebarAddPlaylist></SidebarAddPlaylist>
+          <SidebarAddPlaylist/>
         </SidebarGroup>
         <SidebarDesktopPromo v-if="!isElectron" />
       </div>

@@ -15,7 +15,7 @@ defineProps<{
       class="col-span-full flex gap-3 rounded-2xl bg-background-2 p-4 font-medium"
     >
       <div>
-        <NuxtIcon name="icon.alert" class="text-2xl" />
+        <Icon name="icon.alert" class="text-2xl" />
       </div>
       <div class="flex flex-wrap items-center gap-3">
         {{ item.messageText }}
@@ -26,7 +26,7 @@ defineProps<{
           class="-my-1 brightness-95 dark:brightness-150"
         >
           {{ item.translatedButtonText }}
-          <NuxtIcon name="icon.chevron.right" class="ml-auto text-lg" />
+          <Icon name="icon.chevron.right" class="ml-auto text-lg" />
         </ButtonStyled>
       </div>
     </NuxtLink>
@@ -35,7 +35,7 @@ defineProps<{
       class="col-span-full flex gap-3 rounded-2xl bg-background-2 p-4 font-medium"
     >
       <div>
-        <NuxtIcon name="icon.alert" class="text-2xl" />
+        <Icon name="icon.alert" class="text-2xl" />
       </div>
       {{ item.messageText }}
     </div>

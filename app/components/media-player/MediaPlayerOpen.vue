@@ -102,7 +102,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
           class="flex aspect-square w-14 items-center justify-center rounded-full border-label-separator text-2xl transition-all duration-200 ease-out"
           @click.stop="rewind()"
         >
-          <NuxtIcon name="icon.rewind.large" filled />
+          <Icon name="icon.rewind.large" filled />
         </button>
         <button
           :class="
@@ -113,28 +113,28 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
           class="flex aspect-square w-14 items-center justify-center rounded-full text-2xl transition-all duration-200 ease-out"
           @click.stop="previous()"
         >
-          <NuxtIcon name="icon.previous.track.large" filled />
+          <Icon name="icon.previous.track.large" filled />
         </button>
 
         <button
           v-if="isLoading"
           class="flex aspect-square w-14 items-center justify-center rounded-full bg-background-2 text-2xl"
         >
-          <NuxtIcon name="icon.loading.animation" filled />
+          <Icon name="icon.loading.animation" filled />
         </button>
         <button
           v-if="!isLoading && status === MediaPlayerStatus.Playing"
           class="flex aspect-square w-14 items-center justify-center rounded-full bg-background-2 text-3xl transition-all duration-200 ease-out hover:text-4xl"
           @click.stop="pause()"
         >
-          <NuxtIcon name="icon.pause.large" />
+          <Icon name="icon.pause.large" />
         </button>
         <button
           v-if="!isLoading && status !== MediaPlayerStatus.Playing"
           class="flex aspect-square w-14 items-center justify-center rounded-full bg-background-2 text-3xl transition-all duration-200 ease-out hover:text-4xl"
           @click.stop="play()"
         >
-          <NuxtIcon name="play" />
+          <Icon name="play" />
         </button>
         <button
           :class="
@@ -145,7 +145,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
           class="flex aspect-square w-14 items-center justify-center rounded-full text-2xl transition-all duration-200 ease-out"
           @click.stop="next()"
         >
-          <NuxtIcon name="icon.next.track.large" filled />
+          <Icon name="icon.next.track.large" filled />
         </button>
 
         <button
@@ -157,7 +157,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
           class="flex aspect-square w-14 items-center justify-center rounded-full text-2xl transition-all duration-200 ease-out"
           @click.stop="fastForward()"
         >
-          <NuxtIcon name="icon.skip.large" filled />
+          <Icon name="icon.skip.large" filled />
         </button>
       </div>
 
@@ -169,7 +169,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
             class="cursor-pointer rounded-full border border-label-separator p-1.5"
             @click.stop="open = !open"
           >
-            <NuxtIcon name="icon.minify" filled class="text-xl" />
+            <Icon name="icon.minify" filled class="text-xl" />
           </div>
         </div>
         <div v-if="(currentTrack?.languages?.length || 0) > 1" class="text-sm">
@@ -201,7 +201,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
               () => (queue.isShuffled ? queue.unshuffle() : queue.shuffle())
             "
           >
-            <NuxtIcon name="icon.shuffle" class="text-2xl" />
+            <Icon name="icon.shuffle" class="text-2xl" />
           </button>
           <button
             class="rounded-full p-2 transition-all duration-200 ease-out hover:opacity-75"

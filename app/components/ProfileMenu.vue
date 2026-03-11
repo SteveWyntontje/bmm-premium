@@ -76,7 +76,7 @@ const { data: user } = useCurrentUser();
           :alt="auth0User.name || ''"
           class="aspect-square w-6 rounded-full object-cover"
         />
-        <NuxtIcon v-else name="nav.profile" class="ml-1 text-xl" />
+        <Icon v-else name="nav.profile" class="ml-1 text-xl" />
       </button>
 
       <template #items>
@@ -318,7 +318,7 @@ const { data: user } = useCurrentUser();
             class="text-2xl"
             @click="contentLanguages.splice(i, 1)"
           >
-            <NuxtIcon name="icon.close.small" />
+            <Icon name="icon.close.small" />
           </button>
         </div>
       </VueDraggable>
@@ -332,7 +332,7 @@ const { data: user } = useCurrentUser();
           }
         "
       >
-        <NuxtIcon name="icon.add"></NuxtIcon>
+        <Icon name="icon.add" />
         {{ t("profile.add-another-language") }}
       </div>
     </DialogBase>

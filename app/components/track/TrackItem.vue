@@ -99,7 +99,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
       v-if="showDragHandle"
       class="drag-handle invisible absolute left-0 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 cursor-grab text-label-3 active:cursor-grabbing group-hover:visible group-active:visible"
     >
-      <NuxtIcon name="icon.sort" />
+      <Icon name="icon.sort" />
     </div>
 
     <div
@@ -166,7 +166,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
 
       <div v-if="highlight" class="hidden min-w-0 items-center xl:flex">
         <span class="flex gap-1 truncate rounded-3xl bg-[#81888F1A] px-3 py-2">
-          <NuxtIcon name="icon.ai" class="text-utility-auto" />
+          <Icon name="icon.ai" class="text-utility-auto" />
           <div class="truncate" v-html="adjustHighlightText(highlight)"></div>
         </span>
       </div>
@@ -199,7 +199,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
           @click="selectedTrack = track"
           @click.stop
         >
-          <NuxtIcon name="icon.category.playlist" class="text-2xl" />
+          <Icon name="icon.category.playlist" class="text-2xl" />
         </button>
         <button
           class="rounded-full p-2 opacity-0 hover:bg-label-separator hover:opacity-100 group-hover:opacity-100 group-focus:opacity-100"
@@ -208,7 +208,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
           @click="addNext(track, props.origin)"
           @click.stop
         >
-          <NuxtIcon name="icon.play" class="text-2xl" />
+          <Icon name="icon.play" class="text-2xl" />
         </button>
         <TrackMenu
           :track="track"
@@ -226,7 +226,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
       <div
         class="col-span-full flex max-w-full gap-1 rounded-3xl bg-[#81888F1A] px-3 py-2"
       >
-        <NuxtIcon name="icon.ai" class="text-utility-auto" />
+        <Icon name="icon.ai" class="text-utility-auto" />
         <div
           class="truncat max-h-6 overflow-hidden"
           v-html="adjustHighlightText(highlight)"

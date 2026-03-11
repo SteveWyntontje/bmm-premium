@@ -42,10 +42,10 @@ const onPressShuffle = () => {
         <div
           class="flex aspect-square w-full justify-center rounded-2xl bg-background-2"
         >
-          <NuxtIcon
+          <Icon
             name="icon.category.playlist"
             class="text-5xl md:text-7xl lg:text-8xl"
-          ></NuxtIcon>
+          />
         </div>
       </template>
       <template v-if="collection" #heading>

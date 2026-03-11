@@ -104,7 +104,7 @@ async function addToPlaylist(selectedPlaylist: number) {
       :aria-label="t('track.a11y.options')"
       class="rounded-full bg-background-2 p-2 text-label-1"
     >
-      <NuxtIcon name="options" class="text-2xl" />
+      <Icon name="options" class="text-2xl" />
     </button>
 
     <template #items>

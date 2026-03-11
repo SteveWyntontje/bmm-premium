@@ -166,7 +166,7 @@ const dropdownMenuItems = computed(() => {
       class="rounded-full p-1 hover:bg-background-2 hover:text-label-1"
       :class="buttonClass"
     >
-      <NuxtIcon name="options" class="text-xl" />
+      <Icon name="options" class="text-xl" />
     </button>
 
     <template #items>

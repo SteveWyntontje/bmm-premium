@@ -16,7 +16,7 @@ defineProps<{
         v-if="!item.title && !item.subtitle"
         class="flex gap-1 text-[16px] font-semibold"
       >
-        <NuxtIcon name="icon.fire" class="text-2xl" />
+        <Icon name="icon.fire" class="text-2xl" />
         {{ t("home.list.recommended") }}
       </div>
       <div v-if="item.title" class="text-[18px] font-semibold">

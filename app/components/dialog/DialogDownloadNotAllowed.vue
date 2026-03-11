@@ -18,7 +18,7 @@ const email = runtimeConfig.public.mediaSupportEmail;
     @close="$emit('close')"
   >
     <div class="flex max-w-xl flex-col items-center justify-center">
-      <NuxtIcon name="download" class="mt-5 text-center text-5xl" />
+      <Icon name="download" class="mt-5 text-center text-5xl" />
       <h3 class="my-3 text-2xl font-extrabold leading-tight text-label-1">
         {{ $t("download.messages-not-allowed.title") }}
       </h3>

@@ -6,7 +6,6 @@ const props = defineProps<{
 const { t } = useI18n();
 
 const translation = computed(() => {
-  // eslint-disable-next-line @intlify/vue-i18n/no-dynamic-keys
   const text = t(props.i18nKey);
   const properties = text.matchAll(/<(\w*)>/g);
   return {

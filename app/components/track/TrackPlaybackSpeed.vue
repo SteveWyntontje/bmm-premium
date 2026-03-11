@@ -39,7 +39,7 @@ const dropdownMenuItems = computed(() =>
     >
       <div class="flex items-center justify-between gap-4">
         {{ item.text }}
-        <NuxtIcon v-if="item.current" name="icon.selected" class="text-2xl" />
+        <Icon v-if="item.current" name="icon.selected" class="text-2xl" />
       </div>
     </DropdownMenuItem>
   </DropdownMenu>

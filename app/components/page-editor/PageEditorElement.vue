@@ -62,14 +62,14 @@ const shouldShowField = (value: unknown) =>
             class="type-subtitle-2 flex items-center gap-1 text-label-4"
             @click="$emit('add')"
           >
-            <NuxtIcon name="icon.add" />
+            <Icon name="icon.add" />
             Add after
           </button>
           <button
             class="type-subtitle-2 flex items-center gap-1 text-label-4"
             @click="$emit('remove')"
           >
-            <NuxtIcon name="icon.close.small" />
+            <Icon name="icon.close.small" />
             Delete
           </button>
         </div>

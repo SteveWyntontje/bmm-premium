@@ -84,7 +84,7 @@ async function shufflePodcast() {
           class="h-10 w-10 rounded-full bg-black-1"
           @click.stop="playTrack"
         >
-          <NuxtIcon name="icon.play" class="p-2 text-2xl text-white-1" />
+          <Icon name="icon.play" class="p-2 text-2xl text-white-1" />
         </button>
         <button
           v-if="item.shufflePodcastId"

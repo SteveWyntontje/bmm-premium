@@ -103,7 +103,7 @@ watch(statistics, (stats) => {
         <DropdownMenu>
           <ButtonStyled size="small" intent="tertiary">
             {{ statistics.highlightedChurchName }}
-            <NuxtIcon name="icon.chevron.down" />
+            <Icon name="icon.chevron.down" />
           </ButtonStyled>
           <template #items>
             <DropdownMenuGroup>
@@ -207,7 +207,7 @@ watch(statistics, (stats) => {
               {{
                 churchSize === "large" ? "Store menigheter" : "Små menigheter"
               }}
-              <NuxtIcon name="icon.chevron.down" class="ml-1" />
+              <Icon name="icon.chevron.down" class="ml-1" />
             </ButtonStyled>
             <template #items>
               <DropdownMenuGroup>

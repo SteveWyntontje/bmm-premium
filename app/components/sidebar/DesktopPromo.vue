@@ -10,7 +10,7 @@ const profileStore = useProfileStore();
     <div class="promo-shadow absolute bottom-3 left-3 right-3 text-black-1">
       <div class="flex flex-col gap-2 border-b-2 border-label-separator p-3">
         <div class="flex justify-between">
-          <NuxtIcon name="icon.download" class="text-2xl" />
+          <Icon name="icon.download" class="text-2xl" />
           <NuxtIcon
             name="icon.close.small"
             class="cursor-pointer text-2xl text-black-3"

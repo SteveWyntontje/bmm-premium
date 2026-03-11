@@ -33,7 +33,7 @@ defineProps<{
         </div>
         <div class="flex justify-end">
           <button class="px-2">
-            <NuxtIcon name="icon.chevron.right" class="text-2xl" />
+            <Icon name="icon.chevron.right" class="text-2xl" />
           </button>
         </div>
       </div>

@@ -49,7 +49,7 @@ function removeOption(option: TOption) {
           >
             {{ displayValue(option) }}
             <button class="aspect-square h-full" @click="removeOption(option)">
-              <NuxtIcon name="icon.close.small" class="opacity-50" />
+              <Icon name="icon.close.small" class="opacity-50" />
             </button>
           </span>
         </TransitionGroup>

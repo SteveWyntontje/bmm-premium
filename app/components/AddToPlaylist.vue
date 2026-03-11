@@ -65,7 +65,7 @@ const selectList = async (playlistId: number, playlistName: string) => {
         class="flow-row flex cursor-pointer gap-3 rounded-lg p-2 px-5 text-label-1 hover:bg-label-separator"
         @click="selectList(collection.id, collection.name || '')"
       >
-        <NuxtIcon name="icon.category.playlist"></NuxtIcon>
+        <Icon name="icon.category.playlist"/>
         {{ collection.name }}
       </div>
     </div>

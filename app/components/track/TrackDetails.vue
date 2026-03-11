@@ -89,10 +89,10 @@ const extractFields = (track: TrackModel) => {
       </div>
     </div>
   </div>
-  <br />
+  <br >
 
   <template v-if="track.externalRelations?.length ?? 0 > 0">
-    <hr class="h-[2px] border-0 bg-background-2" />
+    <hr class="h-[2px] border-0 bg-background-2" >
     <div class="py-4 text-lg">
       <div>
         <b>{{ t("track.details.reference") }}</b>
@@ -107,7 +107,7 @@ const extractFields = (track: TrackModel) => {
         >
           <NuxtIcon
             :name="reference.hasListened ? 'icon.checkmark' : 'icon.link'"
-          ></NuxtIcon>
+          />
           <div v-if="reference.name">
             <div
               v-for="(part, index) in reference.name.split(' / ')"
@@ -117,15 +117,15 @@ const extractFields = (track: TrackModel) => {
               {{ part }}
             </div>
           </div>
-          <NuxtIcon name="icon.chevron.right" class="ml-auto"></NuxtIcon>
+          <Icon name="icon.chevron.right" class="ml-auto" />
         </NuxtLink>
       </div>
     </div>
-    <hr class="h-[2px] border-0 bg-background-2" />
+    <hr class="h-[2px] border-0 bg-background-2" >
   </template>
 
   <template v-for="(field, index) in extractFields(track)" :key="index">
-    <hr class="h-[2px] border-0 bg-background-2" />
+    <hr class="h-[2px] border-0 bg-background-2" >
     <div class="flex py-4 text-lg">
       <div class="w-40 shrink-0">
         <b>{{ field.label }}</b>

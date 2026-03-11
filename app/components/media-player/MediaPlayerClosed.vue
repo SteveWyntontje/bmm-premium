@@ -51,21 +51,21 @@ const onPointerDownProgressBar = () => {
         v-if="isLoading"
         class="flex aspect-square w-12 items-center justify-center text-2xl"
       >
-        <NuxtIcon name="icon.loading.animation" filled />
+        <Icon name="icon.loading.animation" filled />
       </button>
       <button
         v-if="!isLoading && status === MediaPlayerStatus.Playing"
         class="flex aspect-square w-12 items-center justify-center text-3xl transition-all duration-200 ease-out hover:text-4xl"
         @click.stop="pause()"
       >
-        <NuxtIcon name="icon.pause.large" />
+        <Icon name="icon.pause.large" />
       </button>
       <button
         v-if="!isLoading && status !== MediaPlayerStatus.Playing"
         class="flex aspect-square w-12 items-center justify-center text-3xl transition-all duration-200 ease-out hover:text-4xl"
         @click.stop="play()"
       >
-        <NuxtIcon name="play" />
+        <Icon name="play" />
       </button>
     </div>
     <!-- Icon top left -->

@@ -141,7 +141,7 @@ onMounted(() => {
         target="_blank"
       >
         <div>
-          <NuxtIcon name="icon.alert" class="text-2xl" />
+          <Icon name="icon.alert" class="text-2xl" />
         </div>
         {{ t("download.install-app") }}
         {{ t("download.go-to-store") }}

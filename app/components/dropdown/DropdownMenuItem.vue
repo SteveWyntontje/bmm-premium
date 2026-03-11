@@ -35,7 +35,7 @@ const component = computed(() =>
         <slot :active="active">
           <div class="flex-1 truncate" @click="to && close()">
             <span class="flex items-center gap-2" :title="title">
-              <NuxtIcon v-if="icon" :name="icon" />
+              <Icon v-if="icon" :name="icon" />
               {{ title }}
             </span>
             <span class="type-subtitle-3 text-label-3" :title="secondaryTitle">

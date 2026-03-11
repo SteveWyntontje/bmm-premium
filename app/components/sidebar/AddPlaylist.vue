@@ -32,7 +32,7 @@ const createPlaylist = async () => {
 <template>
   <div class="cursor-pointer px-4 py-2 text-label-3">
     <button class="group flex gap-2" @click="show">
-      <NuxtIcon name="icon.add" class="text-xl" />
+      <Icon name="icon.add" class="text-xl" />
       <span class="transition-transform group-hover:translate-x-2">
         {{ $t("playlist.add") }}
       </span>

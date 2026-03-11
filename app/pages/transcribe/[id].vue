@@ -245,7 +245,7 @@ async function copyToClipboard() {
         <DropdownMenu v-if="language" placement="bottom-end">
           <ButtonStyled intent="tertiary">
             {{ getLocalizedLanguageName(language) }}
-            <NuxtIcon name="icon.chevron.down" class="ml-2" />
+            <Icon name="icon.chevron.down" class="ml-2" />
           </ButtonStyled>
           <template #items>
             <DropdownMenuGroup>
@@ -313,7 +313,7 @@ async function copyToClipboard() {
                   class="-ml-4 mr-auto flex items-center gap-1"
                   @click="playTranscriptionSegment(item)"
                 >
-                  <NuxtIcon name="icon.play" />
+                  <Icon name="icon.play" />
                   <span>
                     {{
                       [item.start, item.end]
@@ -335,7 +335,7 @@ async function copyToClipboard() {
                   class="flex items-center gap-0.5 rounded-full border border-label-separator px-1.5 hover:text-label-3"
                   @click="addSegment(index)"
                 >
-                  <NuxtIcon name="icon.add" class="opacity-50" />
+                  <Icon name="icon.add" class="opacity-50" />
                   {{ t("transcription.insertBefore") }}
                 </button>
                 <button
@@ -345,7 +345,7 @@ async function copyToClipboard() {
                   class="flex items-center gap-0.5 rounded-full border border-label-separator px-1.5 hover:text-label-3"
                   @click="appendSegment()"
                 >
-                  <NuxtIcon name="icon.add" class="opacity-50" />
+                  <Icon name="icon.add" class="opacity-50" />
                   {{ t("transcription.insertAfter") }}
                 </button>
                 <button
@@ -362,11 +362,11 @@ async function copyToClipboard() {
                   @click="toggleDeletion(item)"
                 >
                   <template v-if="!deletedTranscriptionSegments.includes(item)">
-                    <NuxtIcon name="icon.close.small" class="opacity-50" />
+                    <Icon name="icon.close.small" class="opacity-50" />
                     {{ t("transcription.deleteSegment") }}
                   </template>
                   <template v-else>
-                    <NuxtIcon name="icon.repeat" class="opacity-50" />
+                    <Icon name="icon.repeat" class="opacity-50" />
                     {{ t("transcription.undeleteSegment") }}
                   </template>
                 </button>

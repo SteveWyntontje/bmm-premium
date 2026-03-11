@@ -210,7 +210,7 @@ function useDefaultLongCopyright() {
                 class="type-subtitle-3 flex items-center gap-1 rounded-md border border-label-separator bg-background-2 pl-1 pr-2 text-label-3 hover:border-label-4 hover:text-label-2"
                 @click="useDefaultLongCopyright"
               >
-                <NuxtIcon name="icon.add" class="opacity-50" />
+                <Icon name="icon.add" class="opacity-50" />
                 <span>Default SSSF copyright</span>
               </button>
             </div>

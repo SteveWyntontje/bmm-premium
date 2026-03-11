@@ -90,7 +90,7 @@ const { data: currentUser } = useCurrentUser();
           :to="getSongtreasuresLink(track)"
           @click="onHeaderClick"
         >
-          <NuxtIcon :name="dialogIcon" />
+          <Icon :name="dialogIcon" />
           <span>{{ dialogTitle }}</span>
         </component>
         <NuxtLink
@@ -151,7 +151,7 @@ const { data: currentUser } = useCurrentUser();
   >
     <div class="flex max-w-[480px] flex-col items-center gap-6 p-8 text-center">
       <div class="type-title-1 text-utility-auto">
-        <NuxtIcon name="icon.ai" class="type-heading-3 mb-1" />
+        <Icon name="icon.ai" class="type-heading-3 mb-1" />
         <span>{{ t("transcription.auto-transcribed.title") }}</span>
       </div>
       <h2 class="type-heading-3 text-balance text-label-1">

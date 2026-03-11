@@ -175,7 +175,7 @@ function playTrack(item: TrackModel) {
         :class="searchTerm === '' ? '' : 'bg-background-'"
       >
         <div class="flex w-80 items-center px-3 py-2">
-          <NuxtIcon name="nav.search" class="text-xl text-label-1" />
+          <Icon name="nav.search" class="text-xl text-label-1" />
           <input
             ref="searchbox"
             v-model="searchTerm"
@@ -188,7 +188,7 @@ function playTrack(item: TrackModel) {
             class="cursor-pointer text-2xl text-label-1"
             @click="searchTerm = ''"
           >
-            <NuxtIcon name="icon.close.small" />
+            <Icon name="icon.close.small" />
           </button>
         </div>
       </div>
