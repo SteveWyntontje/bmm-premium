@@ -67,7 +67,6 @@ const convertModels = (models: IAllDocumentModels[]) => {
     } else if (
       i === 0 ||
       el.type === "recommendation" ||
-      el.type === "InfoMessage" ||
       el.type === "listening_streak"
     ) {
       currentSection = [el];
@@ -304,20 +303,9 @@ onMounted(() => {
               v-else-if="item.type === 'recommendation'"
               :item="item"
             />
-
-            <template v-else-if="item.type === 'InfoMessage'">
-              <InfoMessageItem :item="item" />
-            </template>
-
             <template v-else-if="item.type === 'project_box_v2'">
               <ProjectBoxItem :item="item" />
             </template>
-
-            <li v-else class="col-span-full">
-              <div style="background-color: rgba(255, 0, 0, 0.4); color: red">
-                "{{ item.type }}" is not yet implemented ...
-              </div>
-            </li>
           </template>
         </ol>
       </template>

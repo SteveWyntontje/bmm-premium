@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/require-default-prop -->
 <script lang="ts" setup>
 import type { Highlighting, TrackModel } from "@bcc-code/bmm-sdk-fetch";
 import { MediaPlayerStatus } from "~/plugins/mediaPlayer/mediaPlayer";
@@ -23,7 +24,7 @@ const props = withDefaults(
 );
 
 defineSlots<{
-  default: (props: {}) => any;
+  default: (props: object) => unknown;
 }>();
 
 const emit = defineEmits<{ "play-track": [] }>();
@@ -104,14 +105,13 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
 
     <div
       class="absolute -inset-x-4 -inset-y-0 rounded-xl bg-background-2 opacity-0 group-hover:opacity-100"
-    ></div>
+    />
 
     <div
       v-if="isPlaying"
       class="absolute -inset-x-4 -inset-y-0 rounded-xl bg-tint"
-    ></div>
+    />
 
-    <!-- eslint-disable vue/no-v-html -->
     <div class="relative col-span-full grid grid-cols-subgrid">
       <div v-if="showThumbnail" class="hidden flex-col justify-center lg:flex">
         <div class="relative aspect-square w-10">
@@ -122,7 +122,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
           >
             <div
               class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50"
-            ></div>
+            />
             <Icon
               name="play"
               class="absolute inset-0 flex items-center justify-center text-2xl text-white-1"
@@ -131,7 +131,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
           <div v-if="isPlaying" class="absolute inset-0 w-10">
             <div
               class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50"
-            ></div>
+            />
             <Icon
               name="icon.playing.animation"
               class="absolute inset-0 ml-1.5 flex items-center justify-center text-2xl text-white-1"
@@ -143,7 +143,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
         </div>
       </div>
 
-      <div v-if="!showThumbnail" class="relative hidden lg:block"></div>
+      <div v-if="!showThumbnail" class="relative hidden lg:block"/>
       <div
         class="col-span-2 flex min-w-0 flex-col justify-center lg:col-span-1"
       >
@@ -167,7 +167,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
       <div v-if="highlight" class="hidden min-w-0 items-center xl:flex">
         <span class="flex gap-1 truncate rounded-3xl bg-[#81888F1A] px-3 py-2">
           <Icon name="icon.ai" class="text-utility-auto" />
-          <div class="truncate" v-html="adjustHighlightText(highlight)"></div>
+          <div v-sanitize="adjustHighlightText(highlight)" class="truncate" />
         </span>
       </div>
       <div
@@ -185,7 +185,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
         <span :class="isPlaying ? 'text-black-1' : 'text-label-3'">
           <TimeDuration
             :duration="defaultFileForTrack(track)?.duration || 0"
-          ></TimeDuration>
+          />
         </span>
       </div>
       <div
@@ -228,8 +228,8 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
       >
         <Icon name="icon.ai" class="text-utility-auto" />
         <div
+          v-sanitize="adjustHighlightText(highlight)"
           class="truncat max-h-6 overflow-hidden"
-          v-html="adjustHighlightText(highlight)"
         />
       </div>
     </div>
@@ -240,6 +240,6 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
       v-if="selectedTrack"
       :track-id="selectedTrack.id"
       @close="selectedTrack = null"
-    ></TrackAddToPlaylist>
+    />
   </li>
 </template>

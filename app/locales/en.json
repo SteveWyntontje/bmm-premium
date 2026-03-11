@@ -154,6 +154,7 @@
       "options": "Show options"
     },
     "details": {
+      "about": "About",
       "title": "Track Details",
       "reference": "Reference",
       "duration": "Duration",
