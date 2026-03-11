@@ -67,7 +67,6 @@ const convertModels = (models: IAllDocumentModels[]) => {
     } else if (
       i === 0 ||
       el.type === "recommendation" ||
-      el.type === "InfoMessage" ||
       el.type === "listening_streak"
     ) {
       currentSection = [el];
@@ -304,11 +303,6 @@ onMounted(() => {
               v-else-if="item.type === 'recommendation'"
               :item="item"
             />
-
-            <template v-else-if="item.type === 'InfoMessage'">
-              <InfoMessageItem :item="item" />
-            </template>
-
             <template v-else-if="item.type === 'project_box_v2'">
               <ProjectBoxItem :item="item" />
             </template>
