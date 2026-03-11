@@ -91,7 +91,7 @@ async function shufflePodcast() {
           class="h-10 w-10 rounded-full border-[1px] border-label-separator"
           @click.stop="shufflePodcast"
         >
-          <NuxtIcon
+          <Icon
             name="icon.shuffle"
             class="aspect-square p-1 text-xl text-black-1"
           />

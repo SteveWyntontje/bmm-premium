@@ -11,7 +11,7 @@ const profileStore = useProfileStore();
       <div class="flex flex-col gap-2 border-b-2 border-label-separator p-3">
         <div class="flex justify-between">
           <Icon name="icon.download" class="text-2xl" />
-          <NuxtIcon
+          <Icon
             name="icon.close.small"
             class="cursor-pointer text-2xl text-black-3"
             @click="profileStore.hasDisabledDownloadPromo = true"
@@ -28,7 +28,7 @@ const profileStore = useProfileStore();
         <div class="type-subtitle-1">
           {{ $t("download.download-now") }}
         </div>
-        <NuxtIcon
+        <Icon
           name="icon.chevron.right-1"
           class="mr-2 text-2xl transition-transform group-hover:translate-x-2"
         />

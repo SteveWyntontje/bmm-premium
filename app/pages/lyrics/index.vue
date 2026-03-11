@@ -74,7 +74,7 @@ const filteredItems = computed(() => {
         class="w-full truncate rounded-lg border border-label-separator bg-background-2 px-4 py-2"
         :placeholder="$t('search.input-placeholder')"
       />
-      <NuxtIcon
+      <Icon
         name="icon.search"
         class="absolute right-4 top-1/2 -translate-y-1/2"
       />

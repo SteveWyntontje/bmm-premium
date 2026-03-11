@@ -105,7 +105,7 @@ const extractFields = (track: TrackModel) => {
           :target="isInternalLink(reference.url || '') ? '_self' : '_blank'"
           class="my-2 flex flex-row gap-2 rounded-2xl bg-background-2 p-3 text-2xl"
         >
-          <NuxtIcon
+          <Icon
             :name="reference.hasListened ? 'icon.checkmark' : 'icon.link'"
           />
           <div v-if="reference.name">

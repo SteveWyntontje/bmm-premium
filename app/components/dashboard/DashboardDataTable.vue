@@ -146,15 +146,15 @@ const emptyColumnsBeforeFirstColumnGroup = computed(() => {
                   { 'opacity-100': sortBy === column.key },
                 ]"
               >
-                <NuxtIcon
+                <Icon
                   v-if="sortBy !== column.key"
                   name="icon.chevron.up-down"
                 />
-                <NuxtIcon
+                <Icon
                   v-if="sortBy == column.key && sortDirection == 'ascending'"
                   name="icon.chevron.up"
                 />
-                <NuxtIcon
+                <Icon
                   v-if="sortBy == column.key && sortDirection == 'descending'"
                   name="icon.chevron.down"
                 />

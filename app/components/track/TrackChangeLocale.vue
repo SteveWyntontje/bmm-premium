@@ -64,7 +64,7 @@ const remainingLanguages = computed(() =>
           @click.prevent.stop="expanded = !expanded"
         >
           <template #right>
-            <NuxtIcon
+            <Icon
               name="icon.chevron.down"
               class="ml-auto text-xl text-label-1 transition-transform duration-200 ease-out-expo"
               aria-hidden="true"

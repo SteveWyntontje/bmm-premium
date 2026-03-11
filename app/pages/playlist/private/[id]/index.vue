@@ -74,7 +74,7 @@ const handleReorder = (tracks: TrackModel[]) => {
         <div
           class="flex aspect-square w-full justify-center rounded-2xl bg-background-2"
         >
-          <NuxtIcon
+          <Icon
             :name="
               collection?.useLikeIcon
                 ? 'icon.category.favorites'

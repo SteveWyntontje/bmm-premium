@@ -206,7 +206,7 @@ const { data: user } = useCurrentUser();
           class="flex w-full cursor-pointer justify-between rounded-lg px-4 py-3 hover:bg-label-separator"
         >
           <span>{{ getColorModeName(mode) }}</span>
-          <NuxtIcon
+          <Icon
             v-if="mode == colorMode.preference"
             name="icon.selected"
             class="inline-block text-2xl group-hover:text-4xl"
@@ -243,7 +243,7 @@ const { data: user } = useCurrentUser();
                 }})
               </option>
             </select>
-            <NuxtIcon
+            <Icon
               name="icon.chevron.down"
               class="absolute right-2 top-1/2 -translate-y-1/2"
             />
@@ -307,7 +307,7 @@ const { data: user } = useCurrentUser();
                 }})
               </option>
             </select>
-            <NuxtIcon
+            <Icon
               name="icon.chevron.down"
               class="absolute right-2 top-1/2 -translate-y-1/2"
             />

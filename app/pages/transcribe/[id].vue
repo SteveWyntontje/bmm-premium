@@ -413,14 +413,14 @@ async function copyToClipboard() {
           </div>
         </template>
         <template v-else-if="status === 'pending'">
-          <NuxtIcon
+          <Icon
             name="spinner"
             class="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2"
           />
         </template>
       </div>
     </div>
-    <NuxtIcon
+    <Icon
       v-else
       name="spinner"
       class="absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2"

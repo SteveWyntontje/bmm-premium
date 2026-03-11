@@ -54,7 +54,7 @@ const className = cva(
     :class="className({ iconOnly: !slots.default, intent, size, disabled })"
     :disabled
   >
-    <NuxtIcon
+    <Icon
       v-if="loading"
       name="spinner"
       class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -65,7 +65,7 @@ const className = cva(
         { 'translate-y-1 opacity-0': loading },
       ]"
     >
-      <NuxtIcon
+      <Icon
         v-if="icon"
         :name="icon"
         class="text-2xl leading-none"

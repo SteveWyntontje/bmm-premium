@@ -385,7 +385,7 @@ watch(statistics, (stats) => {
             v-if="typeof item.oneEpisodeChange === 'number'"
             class="flex grow items-center justify-end gap-1"
           >
-            <NuxtIcon
+            <Icon
               v-if="item.oneEpisodeChange !== 0"
               :name="
                 item.oneEpisodeChange > 0
@@ -401,7 +401,7 @@ watch(statistics, (stats) => {
             v-if="typeof item.allEpisodesChange === 'number'"
             class="flex grow items-center justify-end gap-1"
           >
-            <NuxtIcon
+            <Icon
               v-if="item.allEpisodesChange !== 0"
               :name="
                 item.allEpisodesChange > 0

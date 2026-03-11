@@ -27,7 +27,7 @@ const setVolume = (value: number) => {
     <div
       class="group/volume flex items-center gap-3 rounded-3xl border border-label-separator px-[16px] py-[1px]"
     >
-      <NuxtIcon
+      <Icon
         name="icon.audio.off"
         class="my-1.5 cursor-pointer text-2xl"
         @click.stop="setVolume(0)"
@@ -59,7 +59,7 @@ const setVolume = (value: number) => {
           </div>
         </div>
       </div>
-      <NuxtIcon
+      <Icon
         name="icon.audio.on"
         class="cursor-pointer text-2xl"
         @click.stop="setVolume(1)"

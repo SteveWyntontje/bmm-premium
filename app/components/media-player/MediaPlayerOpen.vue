@@ -210,13 +210,13 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
             "
             @click.stop="repeatStatus = (repeatStatus + 1) % 3"
           >
-            <NuxtIcon
+            <Icon
               v-if="repeatStatus < 2"
               name="icon.repeat"
               filled
               class="text-2xl"
             />
-            <NuxtIcon
+            <Icon
               v-else
               name="icon.repeat.single"
               filled
@@ -252,7 +252,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
             </div>
 
             <div class="flex items-center justify-between gap-2">
-              <NuxtIcon
+              <Icon
                 v-if="isCurrentTrack(i) && status !== MediaPlayerStatus.Stopped"
                 name="icon.playing.animation"
                 filled

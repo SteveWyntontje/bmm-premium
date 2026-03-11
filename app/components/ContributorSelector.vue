@@ -56,7 +56,7 @@ watch(modelValue, (newValue, oldValue) => {
           >|<span>{{ option.otherReferences }}</span
           >)
         </div>
-        <NuxtIcon
+        <Icon
           :class="[
             'ml-auto',
             { 'opacity-100': selected, 'opacity-0': !selected },

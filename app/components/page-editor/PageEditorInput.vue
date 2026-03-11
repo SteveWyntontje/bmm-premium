@@ -98,7 +98,7 @@ function formatForDateTimeLocal(date: unknown) {
           :checked="Boolean(modelValue)"
           @change="modelValue = ($event.target as HTMLInputElement).checked"
         />
-        <NuxtIcon
+        <Icon
           v-if="Boolean(modelValue)"
           name="icon.checkmark"
           class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-on-color-1"

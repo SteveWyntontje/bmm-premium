@@ -86,7 +86,7 @@ const collapse = ref(false);
       </div>
     </header>
 
-    <NuxtIcon
+    <Icon
       v-if="loading.page"
       name="icon.loading.animation"
       class="mx-auto text-4xl"

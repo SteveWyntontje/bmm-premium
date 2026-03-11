@@ -123,7 +123,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
             <div
               class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50"
             ></div>
-            <NuxtIcon
+            <Icon
               name="play"
               class="absolute inset-0 flex items-center justify-center text-2xl text-white-1"
             />
@@ -132,7 +132,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
             <div
               class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50"
             ></div>
-            <NuxtIcon
+            <Icon
               name="icon.playing.animation"
               class="absolute inset-0 ml-1.5 flex items-center justify-center text-2xl text-white-1"
               :class="{
