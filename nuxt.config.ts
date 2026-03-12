@@ -89,7 +89,7 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
-  // TODO: Option is marked as invalid if env ELECTRON is not enabled, because this enables the module which allows the configuration.
+  // TODO: Option is marked as invalid if env ELECTRON is not defined, because this enables the module which allows the configuration here.
   electron: {
     build: [
       {
