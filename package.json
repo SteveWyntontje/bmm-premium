@@ -8,6 +8,7 @@
 	"main": "dist-electron/main.js",
 	"scripts": {
 		"dev": "nuxt dev --port 9001",
+		"dev:host": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && nuxt dev --port 9001 --host",
 		"build": "nuxt generate",
 		"dev:electron": "cross-env ELECTRON=true nuxt dev --port 9001",
 		"build:electron": "cross-env ELECTRON=true nuxt generate",
