@@ -8,7 +8,7 @@
 	"main": "dist-electron/main.js",
 	"scripts": {
 		"dev": "nuxt dev --port 9001",
-		"dev:host": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && nuxt dev --port 9001 --host",
+		"dev:host": "nuxt dev --port 9001 --host",
 		"build": "nuxt generate",
 		"dev:electron": "cross-env ELECTRON=true nuxt dev --port 9001",
 		"build:electron": "cross-env ELECTRON=true nuxt generate",
@@ -78,6 +78,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"glob": "^13.0.6",
 		"happy-dom": "^20.8.4",
+		"jscodeshift": "^17.3.0",
 		"log-symbols": "^7.0.1",
 		"nuxt": "^4.4.2",
 		"nuxt-electron": "^0.7.0",

@@ -35,12 +35,12 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	devServer: {
-		https: {
-			key: './cert/server.key',
-			cert: './cert/server.crt',
-		},
-	},
+	//devServer: {
+		//https: {
+			//key: './cert/server.key',
+			//cert: './cert/server.crt',
+		//},
+	//},
 	spaLoadingTemplate: true,
 	i18n: {
 		strategy: "no_prefix",

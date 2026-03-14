@@ -49,8 +49,8 @@ function setOpen(value: boolean) {
       <MediaPlayerOpen
         v-else
         :model-value="open"
-        @update:model-value="setOpen"
         class="player-height"
+        @update:model-value="setOpen"
       />
     </div>
   </div>
