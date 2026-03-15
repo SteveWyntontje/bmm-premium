@@ -3,7 +3,7 @@ import type { TrackModel } from "@bcc-code/bmm-sdk-fetch";
 import type { UnwrapRef } from "vue";
 import type { IUserData } from "../2.userData";
 import type { AppInsights } from "../3.applicationInsights";
-import MediaTrack from "./MediaTrack";
+import type MediaTrack from "./MediaTrack";
 import Queue from "./Queue";
 import EnrichedTrackModel from "./EnrichedTrackModel";
 
@@ -28,9 +28,9 @@ export interface MediaPlayer {
   previous: () => void;
   rewind: () => void;
   fastForward: () => void;
-  isLoading: ComputedRef<Boolean>;
-  hasNext: ComputedRef<Boolean>;
-  hasPrevious: ComputedRef<Boolean>;
+  isLoading: ComputedRef<boolean>;
+  hasNext: ComputedRef<boolean>;
+  hasPrevious: ComputedRef<boolean>;
   queue: ComputedRef<UnwrapRef<Queue>>;
   currentTrack: ComputedRef<UnwrapRef<TrackModel> | undefined>;
   currentEnrichedTrack: ComputedRef<UnwrapRef<EnrichedTrackModel> | undefined>;
@@ -105,13 +105,13 @@ export const initMediaPlayer = (
   }
 
   function restartTrack() {
-    // TODO: Can we somehow reset the media-track?
-    // Might already be enough to set
-    // activeMedia.value.ended = false;
-    // activeMedia.value.position = 0;
-    // and call
-    // activeMedia.value.play()
-    // ... but additional testing and better understanding of what this implies is needed.
+    /*  TODO: Can we somehow reset the media-track?
+        Might already be enough to set
+        activeMedia.value.ended = false;
+        activeMedia.value.position = 0;
+        and call
+        activeMedia.value.play()
+        ... but additional testing and better understanding of what this implies is needed.*/
 
     initCurrentTrack();
   }
@@ -206,7 +206,7 @@ export const initMediaPlayer = (
 
   const currentPosition = computed({
     get: () => (activeMedia.value ? activeMedia.value.position : NaN),
-    set: (value: any) => {
+    set: (value: unknown) => {
       if (activeMedia.value) {
         activeMedia.value.position = Number(value);
       }

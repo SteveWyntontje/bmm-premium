@@ -73,7 +73,10 @@ export default defineNuxtConfig({
 				"class-variance-authority",
 				"ua-parser-js",
 				"@headlessui/vue",
-				"@floating-ui/vue"
+				"@floating-ui/vue",
+				"vue-draggable-plus",
+				"@zag-js/slider",
+				"@zag-js/vue"
 			],
 			// https://stackoverflow.com/a/75655669/517914
 			// @plausible-analytics/tracker cannot be optimised. It gives an warn.

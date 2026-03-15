@@ -4,26 +4,23 @@ import { normalizeProps, useMachine } from "@zag-js/vue";
 
 const { volume } = useNuxtApp().$mediaPlayer;
 
-const [volumeState, volumeSend] = useMachine(
-  slider.machine({
+const service = useMachine(slider.machine, {
     id: "volume",
     value: [volume.value * 100],
     onValueChange(details) {
       const [value] = details.value;
       if (value !== undefined) volume.value = value / 100;
     },
-  }),
+  },
 );
-const volumeSlider = computed(() =>
-  slider.connect(volumeState.value, volumeSend, normalizeProps),
-);
+const volumeSlider = computed(() => slider.connect(service, normalizeProps));
 const setVolume = (value: number) => {
   volume.value = value;
   volumeSlider.value.setValue([value * 100]);
 };
 </script>
 <template>
-  <div class="px-4 pb-2 pt-5" v-bind="volumeSlider.rootProps">
+  <div class="px-4 pb-2 pt-5" v-bind="volumeSlider.getRootProps()">
     <div
       class="group/volume flex items-center gap-3 rounded-3xl border border-label-separator px-[16px] py-[1px]"
     >
@@ -36,16 +33,16 @@ const setVolume = (value: number) => {
         class="h-8 w-full transition-all duration-200 group-hover/volume:h-9"
       >
         <div
-          v-bind="volumeSlider.controlProps"
+          v-bind="volumeSlider.getControlProps()"
           class="h-full cursor-pointer py-3"
         >
           <div class="h-full overflow-hidden rounded-full">
             <div
-              v-bind="volumeSlider.trackProps"
+              v-bind="volumeSlider.getTrackProps()"
               class="h-full cursor-pointer bg-background-2"
             >
               <div
-                v-bind="volumeSlider.rangeProps"
+                v-bind="volumeSlider.getRangeProps()"
                 class="h-full cursor-pointer bg-label-1"
               />
             </div>
@@ -55,7 +52,7 @@ const setVolume = (value: number) => {
             :key="index"
             v-bind="volumeSlider.getThumbProps({ index })"
           >
-            <input v-bind="volumeSlider.getHiddenInputProps({ index })" />
+            <input v-bind="volumeSlider.getHiddenInputProps({ index })" >
           </div>
         </div>
       </div>

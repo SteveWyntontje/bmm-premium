@@ -42,7 +42,6 @@ useDraggable(queueListElement, queue, {
   disabled: disableDraggable,
   onSort({ oldIndex, newIndex }) {
     if (oldIndex === undefined || newIndex === undefined) return;
-
     queue.value.moveTrack(oldIndex, newIndex);
   },
 });
@@ -181,11 +180,11 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
             :track="currentTrack"
             origin="media-player"
             button-class="rounded-full border border-label-separator p-1.5"
-          ></TrackMenu>
+          />
         </div>
       </div>
     </div>
-    <hr class="border-label-separator" />
+    <hr class="border-label-separator" >
     <div class="overflow-y-scroll">
       <div class="flex items-center justify-between px-6 pb-1 pt-4">
         <div class="text-label-3">{{ t("player.queue") }}</div>
@@ -275,7 +274,7 @@ const trackCover = computed(() => coverForTrack(currentTrack.value));
           <hr
             v-if="!(queue.index - 1 === i || isCurrentTrack(i))"
             class="border-label-separator"
-          />
+          >
         </li>
       </ul>
     </div>
