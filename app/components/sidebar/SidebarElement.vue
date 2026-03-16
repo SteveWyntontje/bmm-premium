@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { version } from "~~/package.json";
-import type { NuxtIconName } from "#build/nuxt-icons";
+type NuxtIconName = unknown;
 import type { RoutesNamedLocations } from "@typed-router";
 
 const { data: collections } = usePrivatePlaylists();
@@ -72,12 +72,6 @@ const tools = computed<Tool[]>(() => {
         }"
         style="-webkit-app-region: drag"
       >
-        <div
-          class="ml-[-4px] mt-[3px] md:hidden"
-          @click="hamburgerOpen = !hamburgerOpen"
-        >
-          <Icon name="icon.hamburger" class="fill-label-1 text-2xl" />
-        </div>
         <SiteLogo size="small" />
         <span
           v-if="isElectron"

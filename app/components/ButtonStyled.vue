@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { cva } from "class-variance-authority";
-import type { NuxtIconName } from "#build/nuxt-icons";
+type NuxtIconName = unknown;
 
 const slots = useSlots();
 withDefaults(

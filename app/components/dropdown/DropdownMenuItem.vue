@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NuxtIconName } from "#build/nuxt-icons";
+type NuxtIconName = unknown;
 import { MenuItem } from "@headlessui/vue";
 import type { RoutesNamedLocations } from "@typed-router";
 

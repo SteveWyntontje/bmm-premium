@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { RoutesNamedLocations } from "@typed-router";
-import type { NuxtIconName } from "#build/nuxt-icons";
+type NuxtIconName = unknown;
 
 withDefaults(
   defineProps<{
@@ -21,7 +21,7 @@ withDefaults(
     active-class="bg-tint text-black-1 dark:text-black-1"
     class="group flex gap-2 rounded-xl px-4 py-2"
   >
-    <Icon v-if="icon" :name="icon" class="text-xl" />
+    <Icon v-if="icon" :name="icon" class="text-xl lower" />
     <span
       class="transition-transform group-hover:translate-x-2"
       :class="{ 'font-semibold': type == 'page', 'text-lg': type == 'page' }"
@@ -30,3 +30,10 @@ withDefaults(
     </span>
   </NuxtLink>
 </template>
+
+<style>
+.lower {
+  position: relative;
+  top: 0.5vh;
+}
+</style>
