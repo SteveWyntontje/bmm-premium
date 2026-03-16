@@ -4,20 +4,38 @@ import { normalizeProps, useMachine } from "@zag-js/vue";
 
 const { volume } = useNuxtApp().$mediaPlayer;
 
+const isDragging = ref(false);
+const newPosition = ref<number | null>(0)
 const service = useMachine(slider.machine, {
     id: "volume",
-    value: [volume.value * 100],
-    onValueChange(details) {
-      const [value] = details.value;
-      if (value !== undefined) volume.value = value / 100;
+    defaultValue: [100],
+    get value() {
+      if (newPosition.value !== null) {
+        return [newPosition.value]
+      }
     },
+    onValueChange(details) {
+      isDragging.value = true;
+      const [value] = details.value;
+      if (value !== undefined) {
+        volume.value = value / 100;
+        newPosition.value = value;
+      };
+    },
+    onValueChangeEnd() {
+      newPosition.value = null;
+      isDragging.value = false;
+    }
   },
 );
 const volumeSlider = computed(() => slider.connect(service, normalizeProps));
 const setVolume = (value: number) => {
   volume.value = value;
-  volumeSlider.value.setValue([value * 100]);
 };
+watch(volume, () => {
+  if (isDragging.value) return;
+  newPosition.value = volume.value * 100;
+});
 </script>
 <template>
   <div class="px-4 pb-2 pt-5" v-bind="volumeSlider.getRootProps()">
