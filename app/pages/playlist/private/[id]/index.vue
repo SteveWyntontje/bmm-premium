@@ -80,7 +80,7 @@ const handleReorder = (tracks: TrackModel[]) => {
                 ? 'icon.category.favorites'
                 : 'icon.category.playlist'
             "
-            class="text-5xl md:text-7xl lg:text-8xl"
+            class="text-5xl md:text-7xl lg:text-8xl lower"
           />
         </div>
       </template>
@@ -97,7 +97,7 @@ const handleReorder = (tracks: TrackModel[]) => {
           <TrackCountAndDuration
             :track-count="collection.trackCount"
             :seconds="collection.totalSeconds"
-          ></TrackCountAndDuration>
+          />
         </p>
       </template>
       <template v-if="collection" #actions>
@@ -122,7 +122,7 @@ const handleReorder = (tracks: TrackModel[]) => {
             params: { sharingsecret: extractSecret(collection.shareLink) },
           }"
         >
-          <ButtonStyled icon="icon.link"></ButtonStyled>
+          <ButtonStyled icon="icon.link"/>
         </CopyToClipboard>
       </template>
     </TrackCollectionHeader>
@@ -138,3 +138,10 @@ const handleReorder = (tracks: TrackModel[]) => {
     />
   </div>
 </template>
+
+<style scoped>
+.lower {
+  position: relative;
+  top: 25%;
+}
+</style>

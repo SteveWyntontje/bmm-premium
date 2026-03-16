@@ -74,7 +74,7 @@ useHead({
               params: { id: playlistId },
             }"
           >
-            <ButtonStyled intent="secondary" icon="icon.link"> </ButtonStyled>
+            <ButtonStyled intent="secondary" icon="icon.link"/>
           </CopyToClipboard>
         </template>
       </TrackCollectionHeader>

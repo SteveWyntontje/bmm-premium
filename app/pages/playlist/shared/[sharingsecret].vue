@@ -44,7 +44,7 @@ const onPressShuffle = () => {
         >
           <Icon
             name="icon.category.playlist"
-            class="text-5xl md:text-7xl lg:text-8xl"
+            class="text-5xl md:text-7xl lg:text-8xl lower"
           />
         </div>
       </template>
@@ -57,7 +57,7 @@ const onPressShuffle = () => {
           <TrackCountAndDuration
             :track-count="collection.trackCount"
             :seconds="collection.totalSeconds"
-          ></TrackCountAndDuration>
+          />
         </p>
       </template>
       <template #actions>
@@ -79,7 +79,13 @@ const onPressShuffle = () => {
       :skeleton-count="5"
       :show-skeleton="pending"
       :tracks="collection?.tracks || null"
-    >
-    </TrackList>
+    />
   </div>
 </template>
+
+<style>
+.lower {
+  position: relative;
+  top: 25%;
+}
+</style>
