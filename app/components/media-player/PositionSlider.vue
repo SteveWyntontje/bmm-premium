@@ -4,46 +4,49 @@ import { normalizeProps, useMachine } from "@zag-js/vue";
 
 const { currentPosition, currentTrackDuration } = useNuxtApp().$mediaPlayer;
 
+const isDragging = ref(false);
 const newPosition = ref<number | null>(null);
 const service = useMachine(slider.machine, {
   id: "position",
   min: 0,
-  max: 100,
-  value: [0],
+  max: currentTrackDuration.value,
+  defaultValue: [0],
+  get value() {
+    if (newPosition.value !== null) {
+      return [newPosition.value]
+    }
+  },
   step: 0.01,
-  onValueChange(details) {
+  onValueChange(details){
+    isDragging.value = true;
     const [value] = details.value;
-    newPosition.value = value;
-    currentPosition.value = (value / 100) * currentTrackDuration.value;
-    newPosition.value = null;
+    if (value !== undefined) {
+      newPosition.value = null;
+    };
+  },
+  onValueChangeEnd(details) {
+    const [value] = details.value;
+    if (value !== undefined) {
+      currentPosition.value = value;
+      newPosition.value = value;
+    };
+    isDragging.value = false;
   },
 });
 const positionSlider = computed(() => slider.connect(service, normalizeProps));
 
-const currentOrNewPosition = computed(() => {
-  // subtitle
-  if (newPosition.value !== null) {
-    return (newPosition.value / 100) * currentTrackDuration.value;
-  }
-  console.log("currentOrNewPosition " + currentPosition.value)
-  return currentPosition.value;
-});
-
-watch([currentPosition, currentTrackDuration], () => {
-  // slider percentage
-  if (newPosition.value == null) return;
-  if (currentTrackDuration.value > 0) {
-    const value = (currentPosition.value / currentTrackDuration.value) * 100;
-    service.send({
-      type: "SET_VALUE",
-      value: [value],
-    });
-  };
+const currentTime = computed(() => currentPosition.value)
+const remainingTime = computed(() =>
+  Math.max(Math.floor(currentTrackDuration.value) - currentPosition.value, 0)
+);
+watch(currentPosition, () => {
+  if (isDragging.value) return;
+  newPosition.value = currentPosition.value;
 });
 </script>
 
 <template>
-  <div ref="ref" class="group/position px-4 py-2" v-bind="positionSlider.getRootProps()">
+  <div class="group/position px-4 py-2" v-bind="positionSlider.getRootProps()">
     <div class="flex items-center">
       <div class="h-7" />
       <div
@@ -68,7 +71,6 @@ watch([currentPosition, currentTrackDuration], () => {
             v-for="(_, index) in positionSlider.value"
             :key="index"
             v-bind="positionSlider.getThumbProps({ index })"
-            class="top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-label-1"
           >
             <input v-bind="positionSlider.getHiddenInputProps({ index })" >
           </div>
@@ -77,10 +79,10 @@ watch([currentPosition, currentTrackDuration], () => {
     </div>
     <div class="flex justify-between py-0.5 text-sm">
       <span>
-        <TimeDuration :duration="currentOrNewPosition" />
+        <TimeDuration :duration="currentTime" />
       </span>
       <span>
-        <TimeDuration :duration="Math.max(Math.floor(currentTrackDuration) - currentOrNewPosition, 0)" />
+        <TimeDuration :duration="remainingTime" />
       </span>
     </div>
   </div>
