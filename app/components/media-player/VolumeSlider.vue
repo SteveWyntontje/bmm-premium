@@ -5,12 +5,12 @@ import { normalizeProps, useMachine } from "@zag-js/vue";
 const { volume } = useNuxtApp().$mediaPlayer;
 
 const isDragging = ref(false);
-const newPosition = ref<number | null>(0)
+const newPosition = ref(-1)
 const service = useMachine(slider.machine, {
     id: "volume",
     defaultValue: [100],
     get value() {
-      if (newPosition.value !== null) {
+      if (newPosition.value !== -1) {
         return [newPosition.value]
       }
     },
@@ -23,7 +23,6 @@ const service = useMachine(slider.machine, {
       };
     },
     onValueChangeEnd() {
-      newPosition.value = null;
       isDragging.value = false;
     }
   },
