@@ -8,12 +8,10 @@ const isDragging = ref(false);
 const newPosition = ref(-1);
 const service = useMachine(slider.machine, {
 	id: "position",
-	min: 0,
-	max: currentTrackDuration.value,
 	defaultValue: [0],
 	get value() {
 		if (newPosition.value !== -1) {
-			return [newPosition.value]
+			return [(newPosition.value/currentTrackDuration.value)*100]
 		}
 	},
 	step: 0.01,
@@ -21,14 +19,14 @@ const service = useMachine(slider.machine, {
 		isDragging.value = true;
 		const [value] = details.value;
 		if (value !== undefined) {
-			newPosition.value = value;
+			newPosition.value = (value/100)*currentTrackDuration.value;
 		};
 	},
 	onValueChangeEnd(details) {
 		const [value] = details.value;
 		if (value !== undefined) {
-			currentPosition.value = value;
-			newPosition.value = value;
+			currentPosition.value = (value/100)*currentTrackDuration.value;
+			newPosition.value = -1;
 		};
 		isDragging.value = false;
 	},
@@ -41,9 +39,7 @@ const remainingTime = computed(() =>
 );
 watch(currentPosition, () => {
 	if (isDragging.value) return;
-	if (newPosition.value !== -1) {
-		newPosition.value = currentPosition.value;
-	}
+	newPosition.value = currentPosition.value;
 });
 </script>
 
