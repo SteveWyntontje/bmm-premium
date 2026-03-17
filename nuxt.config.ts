@@ -35,12 +35,6 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	//devServer: {
-		//https: {
-			//key: './cert/server.key',
-			//cert: './cert/server.crt',
-		//},
-	//},
 	spaLoadingTemplate: true,
 	i18n: {
 		strategy: "no_prefix",
@@ -85,6 +79,12 @@ export default defineNuxtConfig({
 				"@plausible-analytics/tracker",
 			]
 		},
+		vue: {
+
+		},
+	},
+	nitro: {
+		
 	},
 	app: {
 		pageTransition: { name: "page", mode: "out-in" },
