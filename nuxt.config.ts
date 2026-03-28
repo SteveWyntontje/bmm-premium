@@ -14,10 +14,7 @@ const modules: NuxtConfig["modules"] = [
 	["@pinia/nuxt", { autoImports: ["defineStore"] }],
 	"pinia-plugin-persistedstate",
 	"@vueuse/nuxt",
-	"@nuxtjs/plausible",
 ];
-
-if (process.env.ELECTRON) modules.push("nuxt-electron");
 
 export default defineNuxtConfig({
 	modules,
@@ -27,12 +24,9 @@ export default defineNuxtConfig({
 			authUrl: "https://login.bcc.no",
 			clientId: "L9891KdcqtoKmHg4r65lT7zbSjv55dNN",
 			applicationInsights: "",
-			systemName: process.env.ELECTRON ? "Electron" : "Web",
+			systemName: "Web",
 			isMac: process.platform === "darwin",
 			mediaSupportEmail: "support@bcc.media",
-			sentry: {
-				dsn: "",
-			},
 		},
 	},
 	spaLoadingTemplate: true,
@@ -58,10 +52,8 @@ export default defineNuxtConfig({
 	vite: {
 		optimizeDeps: {
 			include: [
-				"@microsoft/applicationinsights-web",
 				"@bcc-code/bmm-sdk-fetch",
 				"@auth0/auth0-vue",
-				"@sentry/vue",
 				"vue-sanitize-directive",
 				"vue-sonner",
 				"class-variance-authority",
@@ -73,10 +65,8 @@ export default defineNuxtConfig({
 				"@zag-js/vue"
 			],
 			// https://stackoverflow.com/a/75655669/517914
-			// @plausible-analytics/tracker cannot be optimised. It gives an warn.
 			exclude: [
 				"fsevents",
-				"@plausible-analytics/tracker",
 			]
 		},
 		vue: {
@@ -114,17 +104,6 @@ export default defineNuxtConfig({
 	},
 	colorMode: {
 		classSuffix: "",
-	},
-	// TODO: Option is marked as invalid if env ELECTRON is not defined, because this enables the module which allows the configuration here.
-	electron: {
-		build: [
-			{
-				entry: "electron/main.ts",
-			},
-			{
-				entry: "electron/preload.ts",
-			},
-		],
 	},
 	compatibilityDate: "2026-03-05",
 });
