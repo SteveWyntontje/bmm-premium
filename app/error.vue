@@ -1,15 +1,5 @@
 <script setup lang="ts">
 const { t } = useI18n();
-const { $appInsights } = useNuxtApp();
-
-const props = defineProps({
-  error: {
-    type: Object,
-    required: true,
-  },
-});
-
-$appInsights.event("error page shown", props.error);
 
 function handleError() {
   clearError();

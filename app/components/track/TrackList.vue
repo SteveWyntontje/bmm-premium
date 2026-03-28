@@ -6,7 +6,7 @@ const props = withDefaults(
   defineProps<{
     showSkeleton?: boolean;
     skeletonCount?: number;
-    tracks: TrackModel[] | null;
+    tracks: TrackModel[] | null | undefined;
     trackTypeIsKnown?: boolean;
     albumIsKnown?: boolean;
     showThumbnails?: boolean;
@@ -94,8 +94,7 @@ useDraggable<TrackModel>(trackList, orderableTracks, {
         :origin="props.origin"
         :show-drag-handle="props.reorder"
         @play-track="setQueue(tracks, i, props.origin)"
-      >
-      </TrackItem>
+      />
     </template>
   </ol>
 </template>

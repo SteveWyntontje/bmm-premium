@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-vue";
 import { Toaster } from "vue-sonner";
 import "vue-sonner/style.css";
 
-const { $appInsights, $colorMode } = useNuxtApp();
+const { $colorMode } = useNuxtApp();
 
 const { isLoading, loginWithRedirect, isAuthenticated, error, logout } =
   useAuth0();
@@ -60,7 +60,6 @@ watch(
     if (loading) return;
 
     if (!isAuthenticated.value) {
-      $appInsights.event("auth0 - redirect to login", {});
       await loginWithRedirect();
     }
   },
@@ -73,12 +72,6 @@ watch(error, async (e) => {
     console.error(e.message, errorCode);
     const tryLogoutAndRelogin =
       errorCode === "missing_refresh_token" || errorCode === "invalid_grant";
-    $appInsights.event("auth0 - error", {
-      error: errorCode,
-      message: e.message,
-      stack: e.stack,
-      tryLogoutAndRelogin,
-    });
     if (tryLogoutAndRelogin) {
       // For these errors we've identified that a logout & relogin likely will fix it.
       await logout({ openUrl: false });
@@ -88,11 +81,6 @@ watch(error, async (e) => {
 });
 
 const logoutAndRedirect = async () => {
-  $appInsights.event("auth0 - user clicked logoutAndRedirect()", {
-    error: error.value.error,
-    message: error.value.message,
-    stack: error.value.stack,
-  });
   await logout({ openUrl: false });
   await loginWithRedirect();
 };

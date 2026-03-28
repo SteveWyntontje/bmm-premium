@@ -4,7 +4,6 @@ import { describe, it, expect, vi } from "vitest";
 import { HTMLAudioElement, Event } from "happy-dom";
 import { flushPromises } from "@vue/test-utils";
 import MediaTrack from "./MediaTrack";
-import type { AppInsights } from "../3.applicationInsights";
 import { ref } from "vue";
 
 class MediaTrackMock extends MediaTrack {
@@ -17,10 +16,6 @@ class MediaTrackMock extends MediaTrack {
   }
 }
 
-const appInsights: AppInsights = {
-  event: (_: string, _2: unknown) => {},
-};
-
 describe("plugin mediaPlayer MediaTrack", () => {
   describe("init", () => {
     it("starts playing from the start without init-loading", () => {
@@ -29,7 +24,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve(""),
         () => {},
         () => {},
-        appInsights,
+        {},
       );
 
       // Assert
@@ -50,7 +45,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("myTrack"),
         onError,
         vi.fn(),
-        appInsights,
+        {},
       );
       mT.audioElementMock = audio as unknown as globalThis.HTMLAudioElement;
 
@@ -93,7 +88,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("myTrack"),
         () => {},
         vi.fn(),
-        appInsights,
+        {},
       );
 
       // Act
@@ -112,7 +107,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.reject(new Error("Test")),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       const pauses: boolean[] = [];
@@ -143,7 +138,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve(""),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -184,7 +179,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -227,7 +222,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -268,7 +263,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -305,7 +300,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -346,7 +341,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -397,7 +392,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -428,7 +423,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
           () => Promise.resolve("myTrack"),
           () => {},
           vi.fn(),
-          appInsights,
+          {},
         ),
       );
       mT.value.audioElementMock =
@@ -463,7 +458,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("MyUrl"),
         () => {},
         vi.fn(),
-        appInsights,
+        {},
       );
       mT.audioElementMock.src = "Test";
 
@@ -481,7 +476,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("MyUrl"),
         () => {},
         vi.fn(),
-        appInsights,
+        {},
       );
 
       // Act
@@ -503,7 +498,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("myTrack"),
         () => {},
         vi.fn(),
-        appInsights,
+        {},
       );
       mT.audioElementMock = audio as unknown as globalThis.HTMLAudioElement;
 
@@ -522,7 +517,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("myTrack"),
         () => {},
         vi.fn(),
-        appInsights,
+        {},
       );
       mT.audioElementMock = audio as unknown as globalThis.HTMLAudioElement;
 
@@ -540,7 +535,7 @@ describe("plugin mediaPlayer MediaTrack", () => {
         () => Promise.resolve("myTrack"),
         () => {},
         vi.fn(),
-        appInsights,
+        {},
       );
       mT.audioElementMock = audio as unknown as globalThis.HTMLAudioElement;
 

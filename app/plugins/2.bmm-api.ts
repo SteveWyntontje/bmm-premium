@@ -41,40 +41,10 @@ export default defineNuxtPlugin((nuxtApp) => {
             ctx.response.status < 200 ||
             ctx.response.status > 300
           ) {
-            const responseContent = await ctx.response?.text();
-            try {
-              const errorObject = JSON.parse(responseContent);
-              useNuxtApp().$appInsights.event(
-                "request failed by server (json)",
-                {
-                  url: ctx.url,
-                  responseStatus: ctx.response.status,
-                  responseContent,
-                  errorCode: errorObject.code,
-                  errorMessage: errorObject.message,
-                  errorList: errorObject.errors,
-                },
-              );
-            } catch (_) {
-              useNuxtApp().$appInsights.event(
-                "request failed by server (non-json)",
-                {
-                  url: ctx.url,
-                  responseStatus: ctx.response.status,
-                  responseContent,
-                },
-              );
-            }
+            await ctx.response?.text();
           }
         },
-        onError: (ctx) => {
-          useNuxtApp().$appInsights.event("request failed by connection", {
-            url: ctx.url,
-            error: String(ctx.error),
-            errorStack:
-              ctx.error instanceof Error ? ctx.error.stack : undefined,
-            response: ctx.response?.text(),
-          });
+        onError: () => {
           return Promise.resolve();
         },
       },

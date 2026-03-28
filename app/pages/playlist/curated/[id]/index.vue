@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-const { $appInsights } = useNuxtApp();
 const { t } = useI18n();
 toolbarTitleStore().setReactiveToolbarTitle(() => t("nav.playlist"));
 
@@ -22,7 +21,6 @@ const onPressPlay = () => {
 function shuffle() {
   if (playlist.value?.tracks) {
     setQueueShuffled(playlist.value.tracks, origin.value);
-    $appInsights.event("Shuffle Playlist", { playlistId });
   }
 }
 

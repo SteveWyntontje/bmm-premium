@@ -7,7 +7,6 @@ import type { TrackModel } from "@bcc-code/bmm-sdk-fetch";
 import { flushPromises } from "@vue/test-utils";
 import type { UnwrapRef } from "vue";
 import type { IUserData } from "../2.userData";
-import type { AppInsights } from "../3.applicationInsights";
 import Queue from "./Queue";
 import MediaTrack from "./MediaTrack";
 import {
@@ -24,10 +23,6 @@ vi.mock("./Queue", async (importOriginal) => {
     default: vi.fn().mockImplementation((...args: any[]) => new Mod(...args)),
   };
 });
-
-const appInsights: AppInsights = {
-  event: (_: string, _2: any) => {},
-};
 
 const now = new Date();
 function track(id: number) {
@@ -59,9 +54,9 @@ const setupPlayer = () =>
         () => Promise.resolve(src),
         () => {},
         () => {},
-        appInsights,
+        {},
       ),
-    appInsights,
+    {},
     userData,
   );
 

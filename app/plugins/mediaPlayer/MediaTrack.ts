@@ -1,4 +1,3 @@
-import type { AppInsights } from "../3.applicationInsights";
 
 type ListenedPortion = {
   start: number;
@@ -31,8 +30,6 @@ export default class MediaTrack {
   public ended = false;
 
   private p = 0;
-
-  private appInsights: AppInsights;
 
   private portions: ListenedPortion[] = [];
 
@@ -88,13 +85,11 @@ export default class MediaTrack {
     srcGen: () => Promise<string>,
     onError: (e: MediaError | DOMException | unknown | null) => void,
     onTrackPlayed: (play: PlayMeasurement) => void,
-    appInsights: AppInsights,
     debug = false,
   ) {
     this.srcGenerator = srcGen;
     this.onError = onError;
     this.onTrackPlayed = onTrackPlayed;
-    this.appInsights = appInsights;
 
     this.audioElement = new Audio();
     this.audioElement.autoplay = true;

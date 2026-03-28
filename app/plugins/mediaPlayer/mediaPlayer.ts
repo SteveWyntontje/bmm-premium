@@ -2,7 +2,6 @@ import { StatisticsApi } from "@bcc-code/bmm-sdk-fetch";
 import type { TrackModel } from "@bcc-code/bmm-sdk-fetch";
 import type { UnwrapRef } from "vue";
 import type { IUserData } from "../2.userData";
-import type { AppInsights } from "../3.applicationInsights";
 import type MediaTrack from "./MediaTrack";
 import Queue from "./Queue";
 import EnrichedTrackModel from "./EnrichedTrackModel";
@@ -56,7 +55,6 @@ export const seekOffset = 15;
 
 export const initMediaPlayer = (
   createMediaTrack: (src: string, track: EnrichedTrackModel) => MediaTrack,
-  appInsights: AppInsights,
   user: IUserData,
 ): MediaPlayer => {
   const activeMedia = ref<MediaTrack | undefined>();
@@ -159,11 +157,6 @@ export const initMediaPlayer = (
               },
             ],
           });
-
-          appInsights.event("track completed", {
-            trackId: queue.value.currentTrack?.track.id,
-            duration: activeMedia.value?.position,
-          });
         }
 
         if (repeatStatus.value === RepeatStatus.RepeatTrack) {
@@ -180,11 +173,6 @@ export const initMediaPlayer = (
   watch(activeMedia, () => {
     if (activeMedia.value) {
       trackTimestampStart = new Date();
-      if (appInsights.event) {
-        appInsights.event("track playback started", {
-          trackId: queue.value.currentTrack?.track.id,
-        });
-      }
     }
   });
 

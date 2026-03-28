@@ -3,7 +3,6 @@ import type { TrackModel } from "@bcc-code/bmm-sdk-fetch";
 
 const runtimeConfig = useRuntimeConfig();
 const { t } = useI18n();
-const { $appInsights } = useNuxtApp();
 const { addNext, addToQueue } = useNuxtApp().$mediaPlayer;
 
 const { data: user } = await useCurrentUser();
@@ -132,12 +131,7 @@ const dropdownMenuItems = computed(() => {
       clickFunction: async () => {
         const result = await download(props.track);
         if (result === "no-permission") {
-          $appInsights.event("denied downloading track", {
-            trackId: props.track.id,
-          });
           showDownloadDialog.value = true;
-        } else {
-          $appInsights.event("track downloaded", { trackId: props.track.id });
         }
       },
     });
