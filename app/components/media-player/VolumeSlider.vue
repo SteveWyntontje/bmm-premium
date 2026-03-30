@@ -10,10 +10,7 @@ const service = useMachine(slider.machine, {
     id: "volume",
     defaultValue: [100],
     get value() {
-      if (localStorage["Vol"]) {
-        return [localStorage["Vol"]];
-      }
-      else if (newPosition.value !== -1) {
+      if (newPosition.value !== -1) {
         return [newPosition.value]
       }
     },
@@ -37,8 +34,6 @@ const setVolume = (value: number) => {
 watch(volume, () => {
   if (isDragging.value) return;
   newPosition.value = volume.value * 100;
-  localStorage["Vol"] = newPosition.value;
-
 });
 </script>
 <template>
