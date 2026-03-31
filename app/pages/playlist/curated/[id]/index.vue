@@ -30,59 +30,41 @@ useHead({
 </script>
 
 <template>
-  <div v-if="playlist">
-    <div>
-      <TrackCollectionHeader>
-        <template #cover>
-          <CoverImage :src="playlist.cover" class="rounded-2xl" />
-        </template>
-        <template #heading>
-          <PageHeading>{{ playlist.title }}</PageHeading>
-          <p
-            v-if="playlist.description"
-            class="type-paragraph-2 mt-[-12px] text-label-2"
-          >
-            {{ playlist.description }}
-          </p>
-          <p class="type-paragraph-3 my-2 text-label-3">
-            <TrackCountAndDuration
-              :track-count="playlist.trackCount"
-              :seconds="playlist.totalSeconds"
-            />
-          </p>
-        </template>
-        <template #actions>
-          <ButtonStyled
-            intent="primary"
-            icon="icon.play"
-            @click="onPressPlay()"
-          >
-            {{ t("podcast.action.play") }}
-          </ButtonStyled>
-          <ButtonStyled
-            intent="primary"
-            icon="icon.shuffle"
-            @click.stop="shuffle"
-            >{{ t("playlist.action.shuffle") }}</ButtonStyled
-          >
-          <CuratedPlaylistMenu :playlist="playlist" />
-          <CopyToClipboard
+  <div>
+    <div v-if="playlist">
+      <div>
+        <TrackCollectionHeader>
+          <template #cover>
+            <CoverImage :src="playlist.cover" class="rounded-2xl" />
+          </template>
+          <template #heading>
+            <PageHeading>{{ playlist.title }}</PageHeading>
+            <p v-if="playlist.description" class="type-paragraph-2 mt-[-12px] text-label-2">
+              {{ playlist.description }}
+            </p>
+            <p class="type-paragraph-3 my-2 text-label-3">
+              <TrackCountAndDuration :track-count="playlist.trackCount" :seconds="playlist.totalSeconds" />
+            </p>
+          </template>
+          <template #actions>
+            <ButtonStyled intent="primary" icon="icon.play" @click="onPressPlay()">
+              {{ t("podcast.action.play") }}
+            </ButtonStyled>
+            <ButtonStyled intent="primary" icon="icon.shuffle" @click.stop="shuffle">{{ t("playlist.action.shuffle") }}
+            </ButtonStyled>
+            <CuratedPlaylistMenu :playlist="playlist" />
+            <CopyToClipboard
             :link="{
               name: 'playlist-curated-id',
               params: { id: playlistId },
-            }"
-          >
-            <ButtonStyled intent="secondary" icon="icon.link"/>
-          </CopyToClipboard>
-        </template>
-      </TrackCollectionHeader>
+            }">
+              <ButtonStyled intent="secondary" icon="icon.link" />
+            </CopyToClipboard>
+          </template>
+        </TrackCollectionHeader>
 
-      <TrackList
-        :skeleton-count="10"
-        :show-skeleton="pending"
-        :tracks="tracks"
-        :origin="origin"
-      />
+        <TrackList :skeleton-count="10" :show-skeleton="pending" :tracks="tracks" :origin="origin" />
+      </div>
     </div>
   </div>
 </template>
