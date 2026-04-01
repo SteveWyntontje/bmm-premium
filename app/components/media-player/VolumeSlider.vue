@@ -5,7 +5,7 @@ import { normalizeProps, useMachine } from "@zag-js/vue";
 const { volume } = useNuxtApp().$mediaPlayer;
 
 const isDragging = ref(false);
-const newVolume = ref(-1)
+const newVolume = ref(volume.value*100)
 const service = useMachine(slider.machine, {
     id: "volume",
     defaultValue: [100],
