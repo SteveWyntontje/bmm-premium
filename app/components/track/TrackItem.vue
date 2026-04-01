@@ -92,154 +92,86 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
 </script>
 
 <template>
-  <li
-    class="group relative col-span-full grid cursor-pointer grid-cols-subgrid gap-3 py-3"
-    @click.stop="playTrack"
-  >
-    <div
-      v-if="showDragHandle"
-      class="drag-handle invisible absolute left-0 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 cursor-grab text-label-3 active:cursor-grabbing group-hover:visible group-active:visible"
-    >
-      <Icon name="icon.sort" />
-    </div>
-
-    <div
-      class="absolute -inset-x-4 -inset-y-0 rounded-xl bg-background-2 opacity-0 group-hover:opacity-100"
-    />
-
-    <div
-      v-if="isPlaying"
-      class="absolute -inset-x-4 -inset-y-0 rounded-xl bg-tint"
-    />
-
+  <li class="group relative col-span-full grid cursor-pointer grid-cols-subgrid gap-3 py-3" @click.stop="playTrack">
+    <div class="absolute -inset-x-4 -inset-y-0 rounded-xl bg-background-2 opacity-0 group-hover:opacity-100" />
+    <div v-if="isPlaying" class="absolute -inset-x-4 -inset-y-0 rounded-xl bg-tint" />
     <div class="relative col-span-full grid grid-cols-subgrid">
       <div v-if="showThumbnail" class="hidden flex-col justify-center lg:flex">
         <div class="relative aspect-square w-10">
           <CoverImage :src="coverForTrack(track)" class="w-10 rounded-md" />
-          <div
-            v-if="!isPlaying"
-            class="absolute inset-0 w-10 opacity-0 group-hover:opacity-100"
-          >
-            <div
-              class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50"
-            />
-            <Icon
-              name="play"
-              class="absolute inset-0 flex items-center justify-center text-2xl text-white-1"
-            />
+          <div v-if="!isPlaying" class="absolute inset-0 w-10 opacity-0 group-hover:opacity-100">
+            <div class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50" />
+            <Icon name="play" class="absolute inset-0 flex items-center justify-center text-2xl text-white-1" />
           </div>
           <div v-if="isPlaying" class="absolute inset-0 w-10">
-            <div
-              class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50"
-            />
+            <div class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50" />
             <Icon
               name="icon.playing.animation"
-              class="absolute inset-0 ml-1.5 flex items-center justify-center text-2xl text-white-1"
-              :class="{
+              class="absolute inset-0 ml-1.5 flex items-center justify-center text-2xl text-white-1" :class="{
                 'animation-paused': status !== MediaPlayerStatus.Playing,
-              }"
-            />
+              }" />
           </div>
         </div>
       </div>
 
-      <div v-if="!showThumbnail" class="relative hidden lg:block"/>
-      <div
-        class="col-span-2 flex min-w-0 flex-col justify-center lg:col-span-1"
-      >
+      <div v-if="!showThumbnail" class="relative hidden lg:block" />
+      <div class="col-span-2 flex min-w-0 flex-col justify-center lg:col-span-1">
         <h4
-          class="block truncate text-[17px] font-medium leading-6"
-          :class="{ 'text-black-1': isPlaying }"
-          :title="fields.title || ''"
-        >
+          class="block truncate text-[17px] font-medium leading-6" :class="{ 'text-black-1': isPlaying }"
+          :title="fields.title || ''">
           {{ fields.title }}
         </h4>
         <span
-          v-if="fields.subtitle"
-          :title="fields.subtitle"
-          class="block truncate text-[15px] leading-5"
-          :class="isPlaying ? 'text-black-1' : 'text-label-2'"
-        >
+          v-if="fields.subtitle" :title="fields.subtitle" class="block truncate text-[15px] leading-5"
+          :class="isPlaying ? 'text-black-1' : 'text-label-2'">
           {{ fields.subtitle }}
         </span>
       </div>
 
       <div v-if="highlight" class="hidden min-w-0 items-center xl:flex">
         <span class="flex gap-1 truncate rounded-3xl bg-[#81888F1A] px-3 py-2">
-          <Icon name="icon.ai" class="text-utility-auto" />
+          <Icon name="icon.ai" class="text-utility-auto px-2" />
           <div v-sanitize="adjustHighlightText(highlight)" class="truncate" />
         </span>
       </div>
-      <div
-        v-else
-        class="flex min-w-0 items-center"
-        :class="highlight ? 'xl:hidden' : ''"
-      >
-        <span
-          class="truncate"
-          :class="isPlaying ? 'text-black-1' : 'text-label-3'"
-          >{{ fields.third }}</span
-        >
+      <div v-else class="flex min-w-0 items-center" :class="highlight ? 'xl:hidden' : ''">
+        <span class="truncate" :class="isPlaying ? 'text-black-1' : 'text-label-3'">{{ fields.third }}</span>
       </div>
       <div class="flex items-center">
         <span :class="isPlaying ? 'text-black-1' : 'text-label-3'">
-          <TimeDuration
-            :duration="defaultFileForTrack(track)?.duration || 0"
-          />
+          <TimeDuration :duration="defaultFileForTrack(track)?.duration || 0" />
         </span>
       </div>
-      <div
-        class="flex items-center gap-1"
-        :class="isPlaying ? 'text-black-1' : 'text-label-1'"
-      >
+      <div class="flex items-center gap-1" :class="isPlaying ? 'text-black-1' : 'text-label-1'">
         <button
           class="rounded-full p-2 opacity-0 hover:bg-label-separator hover:opacity-100 group-hover:opacity-100 group-focus:opacity-100"
-          :aria-label="t('track.dropdown.add-to-playlist')"
-          :title="t('track.dropdown.add-to-playlist')"
-          @click="selectedTrack = track"
-          @click.stop
-        >
+          :aria-label="t('track.dropdown.add-to-playlist')" :title="t('track.dropdown.add-to-playlist')"
+          @click="selectedTrack = track" @click.stop>
           <Icon name="icon.category.playlist" class="text-2xl" />
         </button>
         <button
           class="rounded-full p-2 opacity-0 hover:bg-label-separator hover:opacity-100 group-hover:opacity-100 group-focus:opacity-100"
-          :aria-label="t('track.dropdown.play-next')"
-          :title="t('track.dropdown.play-next')"
-          @click="addNext(track, props.origin)"
-          @click.stop
-        >
+          :aria-label="t('track.dropdown.play-next')" :title="t('track.dropdown.play-next')"
+          @click="addNext(track, props.origin)" @click.stop>
           <Icon name="icon.play" class="text-2xl" />
         </button>
         <TrackMenu
-          :track="track"
-          :button-class="[
-            'p-2 hover:bg-label-separator',
-            { '!text-black-1 !hover:text-black-1': isPlaying },
-          ]"
-          :add-dropdown-items="props.addDropdownItems"
-          :origin="props.origin"
-        />
+          :track="track" :button-class="[
+          'p-2 hover:bg-label-separator',
+          { '!text-black-1 !hover:text-black-1': isPlaying },
+        ]" :add-dropdown-items="props.addDropdownItems" :origin="props.origin" />
       </div>
     </div>
 
     <div v-if="highlight" class="relative col-span-full xl:hidden">
-      <div
-        class="col-span-full flex max-w-full gap-1 rounded-3xl bg-[#81888F1A] px-3 py-2"
-      >
+      <div class="col-span-full flex max-w-full gap-1 rounded-3xl bg-[#81888F1A] px-3 py-2">
         <Icon name="icon.ai" class="text-utility-auto" />
-        <div
-          v-sanitize="adjustHighlightText(highlight)"
-          class="truncat max-h-6 overflow-hidden"
-        />
+        <div v-sanitize="adjustHighlightText(highlight)" class="truncat max-h-6 overflow-hidden" />
       </div>
     </div>
 
     <slot />
 
-    <TrackAddToPlaylist
-      v-if="selectedTrack"
-      :track-id="selectedTrack.id"
-      @close="selectedTrack = null"
-    />
+    <TrackAddToPlaylist v-if="selectedTrack" :track-id="selectedTrack.id" @close="selectedTrack = null" />
   </li>
 </template>
