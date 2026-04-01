@@ -130,7 +130,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
 
       <div v-if="highlight" class="hidden min-w-0 items-center xl:flex">
         <span class="flex gap-1 truncate rounded-3xl bg-[#81888F1A] px-3 py-2">
-          <Icon name="icon.ai" class="text-utility-auto px-2" />
+          <Icon name="icon.ai" class="text-utility-auto px-2 relative top-1" />
           <div v-sanitize="adjustHighlightText(highlight)" class="truncate" />
         </span>
       </div>
