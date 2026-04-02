@@ -107,7 +107,7 @@ const selectedTrack: Ref<TrackModel | null> = ref(null);
             <div class="absolute inset-0 h-full w-full rounded-md bg-black-3 opacity-50" />
             <Icon
               name="icon.playing.animation"
-              class="absolute inset-0 ml-1.5 flex items-center justify-center text-2xl text-white-1" :class="{
+              class="absolute inset-0 ml-3 mt-2 flex items-center justify-center text-2xl text-white-1" :class="{
                 'animation-paused': status !== MediaPlayerStatus.Playing,
               }" />
           </div>
