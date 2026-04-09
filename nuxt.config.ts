@@ -40,7 +40,7 @@ export default defineNuxtConfig({
 				dir: "./app/assets/icons",
 				prefix: "",
 				recursive: true,
-				normalizeIconName: false
+				normalizeIconName: false,
 			},
 		],
 	},
@@ -61,20 +61,14 @@ export default defineNuxtConfig({
 				"@floating-ui/vue",
 				"vue-draggable-plus",
 				"@zag-js/slider",
-				"@zag-js/vue"
+				"@zag-js/vue",
 			],
 			// https://stackoverflow.com/a/75655669/517914
-			exclude: [
-				"fsevents",
-			]
+			exclude: ["fsevents"],
 		},
-		vue: {
-
-		},
+		vue: {},
 	},
-	nitro: {
-		
-	},
+	nitro: {},
 	app: {
 		pageTransition: { name: "page", mode: "out-in" },
 		head: {
@@ -105,4 +99,7 @@ export default defineNuxtConfig({
 		classSuffix: "",
 	},
 	compatibilityDate: "2026-03-05",
+	devtools: {
+		enabled: true,
+	},
 });
