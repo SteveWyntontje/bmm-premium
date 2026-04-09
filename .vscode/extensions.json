@@ -6,7 +6,6 @@
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
     "bradlc.vscode-tailwindcss",
-    "github.vscode-github-actions",
-    "hashicorp.terraform"
+    "github.vscode-github-actions"
   ]
 }
