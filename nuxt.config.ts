@@ -10,7 +10,6 @@ const modules: NuxtConfig["modules"] = [
 	"@nuxtjs/tailwindcss",
 	"@nuxtjs/i18n",
 	"@nuxtjs/color-mode",
-	"@nuxt/test-utils/module",
 	["@pinia/nuxt", { autoImports: ["defineStore"] }],
 	"pinia-plugin-persistedstate",
 	"@vueuse/nuxt",

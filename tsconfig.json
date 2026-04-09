@@ -1,11 +1,18 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "useDefineForClassFields": true,
-    "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": false // disabled because of https://github.com/vuejs/core/issues/6532
-  }
+	// https://nuxt.com/docs/guide/concepts/typescript
+	"extends": "./.nuxt/tsconfig.json",
+	"compilerOptions": {
+		"useDefineForClassFields": true,
+		"esModuleInterop": true,
+		"lib": ["ESNext", "DOM"],
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": false // disabled because of https://github.com/vuejs/core/issues/6532
+	},
+	"vueCompilerOptions": {
+		"target": 3.5,
+		"strictTemplates": true
+	},
+	"scripts": {
+		"type-check": "vue-tsc --noEmit"
+	}
 }
