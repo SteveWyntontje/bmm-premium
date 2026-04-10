@@ -5,6 +5,12 @@
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
     "bradlc.vscode-tailwindcss",
-    "github.vscode-github-actions"
+    "github.vscode-github-actions",
+    "antfu.iconify",
+    "Nuxtr.nuxtr-vscode",
+    "vscode.typescript-language-features",
+    "christian-kohler.path-intellisense",
+    "kisstkondoros.vscode-codemetrics",
+    "kaustubhsaxena.cognitive-complexity-checker"
   ]
 }
