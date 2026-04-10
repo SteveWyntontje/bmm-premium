@@ -65,7 +65,7 @@
 		"log-symbols": "^7.0.1",
 		"nuxt": "^4.4.2",
 		"nuxt-typed-router": "^4.0.7",
-		"prettier": "^3.8.1",
+		"prettier": "^3.8.2",
 		"prettier-plugin-tailwindcss": "0.7.2",
 		"stylelint": "^17.6.0",
 		"stylelint-config-recommended-scss": "^17.0.1",
