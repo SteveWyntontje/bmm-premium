@@ -1,1 +1,0 @@
-import{ay as s,s as n,J as o,b as u}from"./D0qPWnyT.js";const c=s("toolbarTitle",()=>{const t=n("");function a(e){o(u().locale,()=>{t.value=e()},{immediate:!0})}function l(e){t.value=e}function r(e){t.value=e.value,o(e,i=>{t.value=i})}return{setReactiveToolbarTitle:a,toolbarTitle:t,setToolbarTitle:l,setToolbarTitleByRef:r}});export{c as t};

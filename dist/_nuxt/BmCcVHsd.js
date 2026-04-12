@@ -1,1 +1,0 @@
-import{a7 as i}from"./D0qPWnyT.js";function u(e,r){return e==null?e:{title:i(e,"title")?e.title:void 0,link:i(e,"link")?e.link:void 0,id:e.id,useCoverCarousel:i(e,"use_cover_carousel")?e.use_cover_carousel:void 0,type:e.type}}export{u as S};

@@ -1,1 +1,0 @@
-import{C as r}from"./D2WK9jEI.js";import{v as n,x as u}from"./D0qPWnyT.js";function i(t){const{id:o}=t;return n(`contributor-${o}`,()=>new r().contributorIdGet({id:o}))}function a(t){return u(`contributor-${t}-shuffle`,()=>new r().contributorIdRandomGet({id:t}))}function c(){return n("contributors",()=>new r().contributorGet())}export{a,c as b,i as u};

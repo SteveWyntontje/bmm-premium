@@ -1,1 +1,0 @@
-import{o as t,c as o,t as n,g as s,u as r}from"./D0qPWnyT.js";import{_ as a}from"./DlAUqK2U.js";const u={};function c(e,l){return t(),o("h1",null,"The route "+n(("useRoute"in e?e.useRoute:s(r))().name)+" has not been implemented yet.",1)}const i=a(u,[["render",c]]);export{i as default};

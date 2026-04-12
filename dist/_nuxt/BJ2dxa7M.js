@@ -1,1 +1,0 @@
-import{d as a,u as t,n as r,o as n,c as o}from"./D0qPWnyT.js";const _=a({__name:"[...term]",setup(s){const{term:e}=t().params;return r({name:"search-term",params:{term:e.join(" ")}}),(m,c)=>(n(),o("div"))}});export{_ as default};

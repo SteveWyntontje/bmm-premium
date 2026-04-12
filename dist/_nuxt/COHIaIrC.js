@@ -1,1 +1,0 @@
-import{t}from"./DPwGSAHE.js";import{e as o,h as s}from"./D0qPWnyT.js";function r(e){t().setReactiveToolbarTitle(e),o({title:s(e)})}function f(e){t().setToolbarTitleByRef(e),o({title:e})}export{r as a,f as s};

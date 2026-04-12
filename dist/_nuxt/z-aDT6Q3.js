@@ -1,1 +1,0 @@
-import{a as t,a4 as a,J as r}from"./D0qPWnyT.js";function s(){return[t().$i18n.locale,()=>a().contentLanguages]}function c(e){const n=r(s(),()=>{e.refresh()});return{...e,stopHandler:n}}export{s as a,c as r};

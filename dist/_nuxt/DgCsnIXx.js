@@ -1,1 +1,0 @@
-import{t as e}from"./DPwGSAHE.js";import{J as o,e as i,h as l}from"./D0qPWnyT.js";function a(t){o(t,()=>{e().setToolbarTitle(t.value?.title??" "),i({title:l(()=>t.value?.title??"")})},{immediate:!0})}export{a as s};
