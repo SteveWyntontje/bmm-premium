@@ -1,0 +1,1 @@
+import{b5 as t,b6 as s,n}from"./D0qPWnyT.js";import{u as i,i as o}from"./DJeU3kWO.js";const p=t(async()=>{let e,a;const{data:r}=([e,a]=s(()=>i()),e=await e,a(),e);if(!o(r.value))return n("/")});export{p as default};

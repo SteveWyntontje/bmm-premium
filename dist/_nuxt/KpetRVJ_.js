@@ -1,0 +1,1 @@
+import{d as e,u as t,n,o as s,c as o}from"./D0qPWnyT.js";const i=e({__name:"[...name]",setup(r){const{id:a}=t().params;return n({name:"playlist-curated-id",params:{id:a}}),(c,m)=>(s(),o("div"))}});export{i as default};

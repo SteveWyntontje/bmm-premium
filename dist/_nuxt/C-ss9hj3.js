@@ -1,0 +1,1 @@
+import{d as e,u as s,n as t,o as n,c as o}from"./D0qPWnyT.js";const i=e({__name:"[...name]",setup(c){const{id:a}=s().params;return t({name:"playlist-podcast-id",params:{id:a}}),(p,r)=>(n(),o("div"))}});export{i as default};

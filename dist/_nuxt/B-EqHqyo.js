@@ -1,0 +1,1 @@
+import{a7 as t}from"./D0qPWnyT.js";function n(e){return i(e)}function i(e,r){return e==null?e:{type:e.type,id:e.id,name:e.name,trackCount:e.track_count,followerCount:e.follower_count,authorName:t(e,"author_name")?e.author_name:void 0,canEdit:e.can_edit,useLikeIcon:t(e,"use_like_icon")?e.use_like_icon:void 0}}export{n as T,i as a};
