@@ -72,7 +72,7 @@ export default defineNuxtConfig({
 	app: {
 		pageTransition: { name: "page", mode: "out-in" },
 		head: {
-			base: { href: "/" },
+			base: { href: "./" },
 			meta: [{ name: "description", content: "{{MetadataPlaceholder}}" }],
 
 			link: [
