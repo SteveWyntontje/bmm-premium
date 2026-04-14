@@ -34,7 +34,7 @@
 		"@zag-js/vue": "^1.39.1",
 		"class-variance-authority": "^0.7.1",
 		"cross-env": "^10.1.0",
-		"diff": "^8.0.4",
+		"diff": "^9.0.0",
 		"pinia": "^3.0.4",
 		"pinia-plugin-persistedstate": "^4.7.1",
 		"rimraf": "^6.1.3",
