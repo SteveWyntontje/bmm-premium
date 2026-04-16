@@ -1,7 +1,5 @@
-import { StatisticsApi } from "@bcc-code/bmm-sdk-fetch";
 import type { TrackModel } from "@bcc-code/bmm-sdk-fetch";
 import type { UnwrapRef } from "vue";
-import type { IUserData } from "../2.userData";
 import type MediaTrack from "./MediaTrack";
 import Queue from "./Queue";
 import EnrichedTrackModel from "./EnrichedTrackModel";
@@ -54,9 +52,7 @@ export interface MediaPlayer {
 export const seekOffset = 15;
 
 export const initMediaPlayer = (
-  createMediaTrack: (src: string, track: EnrichedTrackModel) => MediaTrack,
-  user: IUserData,
-): MediaPlayer => {
+  createMediaTrack: (src: string, track: EnrichedTrackModel) => MediaTrack,): MediaPlayer => {
   const activeMedia = ref<MediaTrack | undefined>();
   const repeatStatus = ref<RepeatStatus>(RepeatStatus.NoRepeat);
 
@@ -67,7 +63,6 @@ export const initMediaPlayer = (
       queue.value.length > queue.value.index + 1 ||
       (queue.value.length > 0 && repeatStatus.value !== RepeatStatus.NoRepeat),
   );
-  let trackTimestampStart: Date;
 
   let nextStartPosition = 0;
 
@@ -141,24 +136,6 @@ export const initMediaPlayer = (
     () => activeMedia.value?.ended,
     (ended) => {
       if (ended) {
-        const track = queue.value.currentTrack?.track;
-        if (track !== undefined && user.personId != null) {
-          new StatisticsApi().statisticsListeningPost({
-            listeningEvent: [
-              {
-                personId: user.personId,
-                trackId: track.id,
-                timestampStart: trackTimestampStart,
-                language: track.language ?? "zxx",
-                playbackOrigin: null,
-                lastPosition: activeMedia.value?.position ?? 0,
-                adjustedPlaybackSpeed: playbackSpeed.value,
-                os: user.os,
-              },
-            ],
-          });
-        }
-
         if (repeatStatus.value === RepeatStatus.RepeatTrack) {
           restartTrack();
         } else if (hasNext.value) {
@@ -169,13 +146,6 @@ export const initMediaPlayer = (
       }
     },
   );
-
-  watch(activeMedia, () => {
-    if (activeMedia.value) {
-      trackTimestampStart = new Date();
-    }
-  });
-
   watch(
     () => [queue.value.currentTrack, queue.value],
     () => {
