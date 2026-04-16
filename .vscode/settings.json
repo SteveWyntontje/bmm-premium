@@ -26,5 +26,5 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "chat.disableAIFeatures": false
+  "chat.disableAIFeatures": true
 }
