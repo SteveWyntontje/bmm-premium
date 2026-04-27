@@ -51,7 +51,7 @@
 		"@nuxt/icon": "2.2.1",
 		"@nuxt/kit": "^4.4.2",
 		"@nuxtjs/color-mode": "^4.0.0",
-		"@nuxtjs/i18n": "10.2.4",
+		"@nuxtjs/i18n": "10.3.0",
 		"@nuxtjs/tailwindcss": "^6.14.0",
 		"@types/ua-parser-js": "^0.7.39",
 		"@vue/test-utils": "^2.4.6",
