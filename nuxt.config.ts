@@ -102,4 +102,7 @@ export default defineNuxtConfig({
 	devtools: {
 		enabled: true,
 	},
+	experimental: {
+	viteEnvironmentApi: true,
+	},
 });
