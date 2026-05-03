@@ -16,9 +16,9 @@ function calculateAge(birthDate: string) {
   return years;
 }
 
-var robinsLeeftijd = calculateAge("04/13/2013");
+const robinsLeeftijd = calculateAge("04/13/2013");
 
-var petrockleeftijd = calculateAge("04/13/2026");
+const petrockleeftijd = calculateAge("04/13/2026");
 
 
 
@@ -28,7 +28,7 @@ var petrockleeftijd = calculateAge("04/13/2026");
 <template>
   <div>
     <h2 class="pb-4 pt-10 text-[28px] font-extrabold">
-      Robin van oord is very cool:D
+      Robin van Oord is very cool:D
     </h2>
     <p>
       hello i am {{ robinsLeeftijd }} years young
