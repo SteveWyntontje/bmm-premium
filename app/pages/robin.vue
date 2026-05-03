@@ -3,13 +3,26 @@ const { t } = useI18n();
 setTitle(() => t("track.details.about"));
   
 function calculateAge(birthDate: string) {
-  birthDate = new Date(birthDate);
+  const parts = birthDate.split('/');
+  let part0 = 0;
+  if (parts[0] !== undefined) {
+    part0 = parseInt(parts[0])
+  };
+  let part1 = 0;
+  if (parts[1] !== undefined) {
+    part1 = parseInt(parts[1]) - 1
+  };
+  let part2 = 0;
+  if (parts[2] !== undefined) {
+    part2 = parseInt(parts[2])
+  }
+  const birthDate2 = new Date(part0, part1, part2); 
   const dateNow = new Date();
 
-  var years = dateNow.getFullYear() - birthDate.getFullYear();
+  let years = dateNow.getFullYear() - birthDate2.getFullYear();
 
-  if (dateNow.getMonth() < birthDate.getMonth() ||
-  (dateNow.getMonth() === birthDate.getMonth() && dateNow.getDate() < birthDate.getDate())) {
+  if (dateNow.getMonth() < birthDate2.getMonth() ||
+  (dateNow.getMonth() === birthDate2.getMonth() && dateNow.getDate() < birthDate2.getDate())) {
   years--;
   }
 
