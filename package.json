@@ -16,15 +16,15 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@auth0/auth0-vue": "^2.6.0",
+		"@auth0/auth0-vue": "^2.7.0",
 		"@bcc-code/bmm-sdk-fetch": "^8.9.0",
 		"@floating-ui/vue": "^1.1.11",
 		"@headlessui/vue": "^1.7.23",
 		"@neoconfetti/vue": "^2.2.1",
 		"@pinia/nuxt": "^0.11.3",
-		"@tailwindcss/vite": "^4.2.4",
-		"@tiptap/starter-kit": "^3.22.5",
-		"@tiptap/vue-3": "^3.22.5",
+		"@tailwindcss/vite": "^4.3.0",
+		"@tiptap/starter-kit": "^3.23.1",
+		"@tiptap/vue-3": "^3.23.1",
 		"@unovis/ts": "^1.6.5",
 		"@unovis/vue": "^1.6.5",
 		"@vueuse/core": "^14.3.0",
@@ -49,7 +49,7 @@
 		"@nuxt/devtools": "^3.2.3",
 		"@nuxt/eslint": "1.15.2",
 		"@nuxt/icon": "2.2.2",
-		"@nuxt/kit": "^4.4.4",
+		"@nuxt/kit": "^4.4.5",
 		"@nuxtjs/color-mode": "^4.0.0",
 		"@nuxtjs/i18n": "10.3.0",
 		"@nuxtjs/tailwindcss": "^6.14.0",
@@ -63,15 +63,15 @@
 		"happy-dom": "^20.9.0",
 		"jscodeshift": "^17.3.0",
 		"log-symbols": "^7.0.1",
-		"nuxt": "^4.4.4",
+		"nuxt": "^4.4.5",
 		"nuxt-typed-router": "^4.0.7",
 		"prettier": "^3.8.3",
 		"prettier-plugin-tailwindcss": "0.8.0",
-		"stylelint": "^17.8.0",
+		"stylelint": "^17.11.0",
 		"stylelint-config-recommended-scss": "^17.0.1",
 		"stylelint-config-recommended-vue": "^1.6.1",
 		"tree-kill": "^1.2.2",
 		"typescript": "~6.0.3",
-		"vue-tsc": "^3.2.7"
+		"vue-tsc": "^3.2.8"
 	}
 }
