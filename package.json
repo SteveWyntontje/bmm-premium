@@ -8,7 +8,6 @@
 	"packageManager": "pnpm@10.33.0",
 	"scripts": {
 		"dev": "nuxt dev --port 9001",
-		"dev:host": "nuxt dev --port 9001 --host",
 		"build": "nuxt generate",
 		"preview": "cross-env PORT=9001 nuxt preview",
 		"lint": "stylelint \"**/*.{vue,scss}\" && prettier . --check && eslint --ext ts,js,vue,json . && ELECTRON=true nuxi typecheck",
