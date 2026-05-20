@@ -6,13 +6,18 @@ This repository uses Vue 3 `<script setup>` SFCs, check out the [script setup do
 
 ## Develop
 
+### Pnmn
+
+First install pnpm:
+
 ```sh
-pnpm i
+npm i -g pnpm
 ```
 
-### Website
+After that, run:
 
 ```sh
+pnpm i
 pnpm dev
 ```
 
@@ -24,17 +29,6 @@ To build, first install all packages
 
 ```sh
 pnpm i
-```
-
-You may have to install `pnpm` first:
-
-```sh
-npm -g i pnpm
-```
-
-### Website
-
-```sh
 pnpm build
 ```
 
