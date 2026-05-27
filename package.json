@@ -29,8 +29,8 @@
 		"@vueuse/core": "^14.3.0",
 		"@vueuse/math": "^14.3.0",
 		"@vueuse/router": "^14.3.0",
-		"@zag-js/slider": "^1.41.0",
-		"@zag-js/vue": "^1.41.0",
+		"@zag-js/slider": "^1.41.1",
+		"@zag-js/vue": "^1.41.1",
 		"class-variance-authority": "^0.7.1",
 		"cross-env": "^10.1.0",
 		"diff": "^9.0.0",
@@ -44,7 +44,7 @@
 		"vue-sonner": "^2.0.9"
 	},
 	"devDependencies": {
-		"@intlify/eslint-plugin-vue-i18n": "^4.4.0",
+		"@intlify/eslint-plugin-vue-i18n": "^4.5.0",
 		"@nuxt/devtools": "^3.2.3",
 		"@nuxt/eslint": "1.15.2",
 		"@nuxt/icon": "2.2.2",
@@ -71,6 +71,6 @@
 		"stylelint-config-recommended-vue": "^1.6.1",
 		"tree-kill": "^1.2.2",
 		"typescript": "~6.0.3",
-		"vue-tsc": "^3.3.1"
+		"vue-tsc": "^3.3.2"
 	}
 }
