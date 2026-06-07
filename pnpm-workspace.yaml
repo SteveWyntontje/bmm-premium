@@ -1,2 +1,13 @@
+allowBuilds:
+  '@parcel/watcher': false
+  better-sqlite3: false
+  browser-tabs-lock: false
+  esbuild: false
+  maplibre-gl: false
+  unrs-resolver: false
+  vue-demi: false
+minimumReleaseAgeExclude:
+  - happy-dom@20.10.2
+  - stylelint@17.13.0
 overrides:
   serialize-javascript@<=7.0.2: '>=7.0.3'
