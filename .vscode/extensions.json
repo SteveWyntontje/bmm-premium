@@ -10,7 +10,6 @@
     "Nuxtr.nuxtr-vscode",
     "vscode.typescript-language-features",
     "christian-kohler.path-intellisense",
-    "kisstkondoros.vscode-codemetrics",
-    "kaustubhsaxena.cognitive-complexity-checker"
+    "kisstkondoros.vscode-codemetrics"
   ]
 }
