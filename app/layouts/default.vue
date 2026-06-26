@@ -2,11 +2,9 @@
 import "../assets/main.css";
 
 defineSlots<{
-  default: (props: {}) => any;
+  default: (props: unknown) => unknown;
 }>();
 
-const runtimeConfig = useRuntimeConfig();
-const isElectron = runtimeConfig.public.systemName === "Electron";
 
 const { queue } = useNuxtApp().$mediaPlayer;
 </script>
@@ -14,7 +12,6 @@ const { queue } = useNuxtApp().$mediaPlayer;
 <template>
   <div
     class="flex h-screen overflow-hidden bg-background-1 text-black-1 dark:text-white-1"
-    :class="{ 'select-none': isElectron }"
   >
     <SidebarElement />
     <main

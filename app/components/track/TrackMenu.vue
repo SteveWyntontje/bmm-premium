@@ -124,18 +124,17 @@ const dropdownMenuItems = computed(() => {
     },
   });
 
-  if (runtimeConfig.public.systemName !== "Electron") {
-    items.push({
-      icon: "icon.download",
-      text: t("track.dropdown.download"),
-      clickFunction: async () => {
-        const result = await download(props.track);
-        if (result === "no-permission") {
-          showDownloadDialog.value = true;
-        }
-      },
-    });
-  }
+  items.push({
+    icon: "icon.download",
+    text: t("track.dropdown.download"),
+    clickFunction: async () => {
+      const result = await download(props.track);
+      if (result === "no-permission") {
+        showDownloadDialog.value = true;
+      }
+    },
+  });
+  
 
   if (isTrackManager(user.value)) {
     items.push({

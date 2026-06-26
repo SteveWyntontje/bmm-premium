@@ -2,7 +2,6 @@
 import type { NuxtConfig } from "nuxt/config";
 
 const modules: NuxtConfig["modules"] = [
-	"@auth0/auth0-nuxt",
 	["nuxt-typed-router", { strict: true }],
 	"@nuxt/devtools",
 	"@nuxt/eslint",
@@ -19,12 +18,12 @@ const modules: NuxtConfig["modules"] = [
 export default defineNuxtConfig({
 	modules,
 	runtimeConfig: {
-		auth0: {
-			domain: process.env.NUXT_AUTH0_DOMAIN,
-			clientId: process.env.NUXT_AUTH0_CLIENT_ID,
-			clientSecret: process.env.NUXT_AUTH0_CLIENT_SECRET,
-			sessionSecret: process.env.NUXT_AUTH0_SESSION_SECRET,
-			appBaseUrl: process.env.NUXT_AUTH0_APP_BASE_URL,
+		public: {
+			domain: "stevewyntontje.eu.auth0.com",
+			clientId: "IjfXcX5LzzHj5TRKSVK9q8Esq3fkMUEW",
+			clientSecret: "e8wCrmNbxjfdtGpLVQzRIEvE5UpKOZFXYFxg3Km4_xyMDavbdJ96KAtfnFuxlgZw",
+			systemName: "Web",
+			mediaSupportEmail: "wyntontjes123@outlook.com",
 		},
 	},
 	spaLoadingTemplate: true,
@@ -51,7 +50,7 @@ export default defineNuxtConfig({
 		optimizeDeps: {
 			include: [
 				"@bcc-code/bmm-sdk-fetch",
-				"@auth0/auth0-nuxt",
+				"@auth0/auth0-vue",
 				"vue-sanitize-directive",
 				"vue-sonner",
 				"class-variance-authority",
@@ -97,11 +96,11 @@ export default defineNuxtConfig({
 	colorMode: {
 		classSuffix: "",
 	},
-	compatibilityDate: "2026-06-25",
+	compatibilityDate: "2026-03-05",
 	devtools: {
 		enabled: true,
 	},
 	experimental: {
-		viteEnvironmentApi: true,
+	viteEnvironmentApi: true,
 	},
 });

@@ -9,7 +9,6 @@ export default defineNuxtPlugin((_) => {
   const { getAccessTokenSilently } = useAuth0();
 
   const userData: IUserData = useNuxtApp().$userData;
-  const runtimeConfig = useRuntimeConfig();
 
   return {
     provide: {
@@ -50,7 +49,7 @@ export default defineNuxtPlugin((_) => {
                 language: track.track.language,
                 playbackOrigin: track.originView,
                 adjustedPlaybackSpeed: 1,
-                client: runtimeConfig.public.systemName,
+                client: "Web",
               };
               new StatisticsApi()
                 .statisticsTrackPlayedPost({

@@ -7,15 +7,10 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
-const runtimeConfig = useRuntimeConfig();
-const isElectron = runtimeConfig.public.systemName === "Electron";
-
 const router = useRouter();
 
 const copyToClipboard = () => {
-  const domain = isElectron
-    ? `https://${config.websiteDomain}`
-    : window.location.origin;
+  const domain = window.location.origin;
 
   navigator.clipboard
     .writeText(

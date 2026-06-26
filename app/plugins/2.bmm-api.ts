@@ -7,7 +7,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.config.globalProperties.$auth0;
 
   DefaultConfig.config = new Configuration({
-    basePath: runtimeConfig.public.apiUrl,
+    basePath: runtimeConfig.public.domain,
     middleware: [
       {
         pre: async (ctx) => {

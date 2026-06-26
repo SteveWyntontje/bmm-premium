@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 import { version } from "~~/package.json";
-type NuxtIconName = unknown;
 import type { RoutesNamedLocations } from "@typed-router";
+type NuxtIconName = unknown;
 
 const { data: collections } = usePrivatePlaylists();
-const runtimeConfig = useRuntimeConfig();
-const isElectron = runtimeConfig.public.systemName === "Electron";
-const isElectronOnMac = isElectron && runtimeConfig.public.isMac;
 const isMounted = ref<boolean>(false);
 onMounted(() => {
   isMounted.value = true;
@@ -67,18 +64,9 @@ const tools = computed<Tool[]>(() => {
     <div class="flex h-full flex-col">
       <div
         class="flex items-center gap-3 p-3 px-6"
-        :class="{
-          'pb-1 pt-8': isElectronOnMac,
-        }"
         style="-webkit-app-region: drag"
       >
         <SiteLogo size="small" />
-        <span
-          v-if="isElectron"
-          class="mt-2 inline-block text-xs leading-5 text-label-3"
-        >
-          v{{ version }}
-        </span>
       </div>
       <div class="flex-grow overflow-y-auto">
         <SidebarGroup>
@@ -139,7 +127,7 @@ const tools = computed<Tool[]>(() => {
           />
           <SidebarAddPlaylist/>
         </SidebarGroup>
-        <SidebarDesktopPromo v-if="!isElectron" />
+        <SidebarDesktopPromo/>
       </div>
     </div>
   </aside>

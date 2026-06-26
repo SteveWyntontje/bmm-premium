@@ -8,7 +8,6 @@ const profileStore = useProfileStore();
 const { t } = useI18n();
 
 const runtimeConfig = useRuntimeConfig();
-const isElectron = runtimeConfig.public.systemName === "Electron";
 
 const showInterfaceLanguageDialog = ref(false);
 const showContentLanguageDialog = ref(false);
@@ -135,7 +134,6 @@ const { data: user } = useCurrentUser();
         </DropdownMenuGroup>
         <DropdownMenuGroup>
           <DropdownMenuItem
-            v-if="!isElectron"
             :title="$t('download.download')"
             :to="{ name: 'download' }"
           />

@@ -7,11 +7,10 @@ export interface IUserData {
 }
 
 export default defineNuxtPlugin(() => {
-  const runtimeConfig = useRuntimeConfig();
   const { user } = useAuth0();
 
   const userData: IUserData = {
-    os: runtimeConfig.public.systemName,
+    os: "Web",
     personId: null,
     age: null,
   };

@@ -4,12 +4,13 @@ export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig();
 
   const auth0 = createAuth0({
-    domain: runtimeConfig.public.authUrl,
+    domain: runtimeConfig.public.domain,
     clientId: runtimeConfig.public.clientId,
     cacheLocation: "localstorage",
     authorizationParams: {
+      client_secret: runtimeConfig.public.clientSecret,
+      audience: "https://stevewyntontje.eu.auth0.com/api/v2/",
       redirect_uri: window.location.origin,
-      audience: "https://bmm-api.brunstad.org",
     },
     useRefreshTokens: true,
   });
