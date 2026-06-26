@@ -48,20 +48,20 @@
     "preference-language-2": "Tweede taal",
     "preference-language-3": "Derde taal",
     "preference-language-4": "{count}e taal",
-    "uservoice": "User Voice",
+    "issues": "Problemen",
     "privacy-policy": "Privacybeleid",
     "contact": "Contact",
     "logout": "Uitloggen",
     "theme-dark": "Dark",
     "theme-light": "Light",
-    "theme-system": "Hetzelfde als apparaat",
+    "theme-system": "Systeem",
     "done": "Gereed",
     "add-another-language": "Een andere taal toevoegen"
   },
   "error": {
     "page-not-found": {
       "headline": "Fout",
-      "text": "Sorry Sorry, we kunnen de pagina \"{path}\" niet vinden."
+      "text": "Sorry, we kunnen de pagina \"{path}\" niet vinden."
     },
     "track-already-in-playlist": "Nummer bestaat al in afspeellijst {0}",
     "album-already-in-playlist": "Dit album staat al in je afspeellijst.",
@@ -81,14 +81,14 @@
       "logout-and-redirect-link": "probeer opnieuw in te loggen"
     },
     "redirect-message": {
-      "redirect-info": "Je wordt doorgestuurd naar de login pagina.",
+      "redirect-info": "Je wordt doorgestuurd naar de loginpagina.",
       "manual-redirect-info": "Wacht of {0}.",
       "redirect-link": "Klik om opnieuw te proberen"
     }
   },
   "download": {
     "install-app": "Wij raden aan de app te installeren.",
-    "go-to-store": "Navigeer naar de App Store.",
+    "go-to-store": "Ga naar de App Store.",
     "get-for-desktop": "Download de BMM-app rechtstreeks op uw bureaublad",
     "download": "Downloaden",
     "download-now": "Nu downloaden",

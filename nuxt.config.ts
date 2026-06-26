@@ -20,6 +20,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			domain: "stevewyntontje.eu.auth0.com",
+			audience: "https://stevewyntontje.eu.auth0.com/api/v2/",
 			clientId: "IjfXcX5LzzHj5TRKSVK9q8Esq3fkMUEW",
 			clientSecret: "e8wCrmNbxjfdtGpLVQzRIEvE5UpKOZFXYFxg3Km4_xyMDavbdJ96KAtfnFuxlgZw",
 			systemName: "Web",

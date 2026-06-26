@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     cacheLocation: "localstorage",
     authorizationParams: {
       client_secret: runtimeConfig.public.clientSecret,
-      audience: "https://stevewyntontje.eu.auth0.com/api/v2/",
+      audience: runtimeConfig.public.audience,
       redirect_uri: window.location.origin,
     },
     useRefreshTokens: true,

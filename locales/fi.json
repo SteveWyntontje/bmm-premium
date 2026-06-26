@@ -18,7 +18,7 @@
     "contributors": "Tekijät",
     "archive": "Arkisto",
     "transcribe": "Tekstiksi",
-    "lyrics": "Sanat\n"
+    "lyrics": "Sanat"
   },
   "sidebar": {
     "playlists": {
@@ -43,7 +43,7 @@
     "preference-language-2": "Toinen kieli",
     "preference-language-3": "Kolmas kieli",
     "preference-language-4": "{count}. kieli",
-    "uservoice": "Palautteet",
+    "issues": "Ongelmia",
     "privacy-policy": "Tietosuojakäytäntö",
     "contact": "Yhteydenotto",
     "logout": "Kirjaudu ulos",

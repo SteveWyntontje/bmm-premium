@@ -134,26 +134,13 @@ const { data: user } = useCurrentUser();
         </DropdownMenuGroup>
         <DropdownMenuGroup>
           <DropdownMenuItem
-            :title="$t('download.download')"
-            :to="{ name: 'download' }"
-          />
-          <DropdownMenuItem
-            :title="$t('profile.uservoice')"
-            href="https://uservoice.bcc.no/?tags=bmm"
+            :title="$t('profile.issues')"
+            href="https://github.com/SteveWyntontje/bmm-premium/issues"
             target="_blank"
           />
           <DropdownMenuItem
             :title="$t('profile.contact')"
-            href="mailto:bmm-support@bcc.no"
-            target="_blank"
-          />
-          <DropdownMenuItem
-            :title="$t('profile.privacy-policy')"
-            :href="
-              profileStore.uiLanguage === 'nb'
-                ? 'https://bcc.media/no/personvern/'
-                : 'https://bcc.media/en/privacy/'
-            "
+            href="mailto:wyntontjes123@outlook.com"
             target="_blank"
           />
           <DropdownMenuItem
