@@ -2,6 +2,7 @@
 import type { NuxtConfig } from "nuxt/config";
 
 const modules: NuxtConfig["modules"] = [
+	"@auth0/auth0-nuxt",
 	["nuxt-typed-router", { strict: true }],
 	"@nuxt/devtools",
 	"@nuxt/eslint",
@@ -18,14 +19,12 @@ const modules: NuxtConfig["modules"] = [
 export default defineNuxtConfig({
 	modules,
 	runtimeConfig: {
-		public: {
-			apiUrl: "https://bmm-api.brunstad.org",
-			authUrl: "https://login.bcc.no",
-			clientId: "L9891KdcqtoKmHg4r65lT7zbSjv55dNN",
-			applicationInsights: "",
-			systemName: "Web",
-			isMac: process.platform === "darwin",
-			mediaSupportEmail: "support@bcc.media",
+		auth0: {
+			domain: process.env.NUXT_AUTH0_DOMAIN,
+			clientId: process.env.NUXT_AUTH0_CLIENT_ID,
+			clientSecret: process.env.NUXT_AUTH0_CLIENT_SECRET,
+			sessionSecret: process.env.NUXT_AUTH0_SESSION_SECRET,
+			appBaseUrl: process.env.NUXT_AUTH0_APP_BASE_URL,
 		},
 	},
 	spaLoadingTemplate: true,
@@ -52,7 +51,7 @@ export default defineNuxtConfig({
 		optimizeDeps: {
 			include: [
 				"@bcc-code/bmm-sdk-fetch",
-				"@auth0/auth0-vue",
+				"@auth0/auth0-nuxt",
 				"vue-sanitize-directive",
 				"vue-sonner",
 				"class-variance-authority",
@@ -98,11 +97,11 @@ export default defineNuxtConfig({
 	colorMode: {
 		classSuffix: "",
 	},
-	compatibilityDate: "2026-03-05",
+	compatibilityDate: "2026-06-25",
 	devtools: {
 		enabled: true,
 	},
 	experimental: {
-	viteEnvironmentApi: true,
+		viteEnvironmentApi: true,
 	},
 });

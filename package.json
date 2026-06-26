@@ -15,7 +15,7 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@auth0/auth0-vue": "^2.7.0",
+		"@auth0/auth0-nuxt": "^1.1.0",
 		"@bcc-code/bmm-sdk-fetch": "^8.9.0",
 		"@floating-ui/vue": "^2.0.0",
 		"@headlessui/vue": "^1.7.23",
