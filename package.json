@@ -15,7 +15,7 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@auth0/auth0-vue": "^2.7.0",
+		"@auth0/auth0-vue": "^2.8.0",
 		"@bcc-code/bmm-sdk-fetch": "^8.9.0",
 		"@floating-ui/vue": "^2.0.0",
 		"@headlessui/vue": "^1.7.23",
@@ -47,7 +47,7 @@
 		"@intlify/eslint-plugin-vue-i18n": "^4.5.1",
 		"@nuxt/devtools": "3.2.4",
 		"@nuxt/eslint": "1.16.0",
-		"@nuxt/icon": "2.2.5",
+		"@nuxt/icon": "2.3.1",
 		"@nuxt/kit": "^4.4.8",
 		"@nuxtjs/color-mode": "^4.0.1",
 		"@nuxtjs/i18n": "10.4.0",
@@ -71,6 +71,6 @@
 		"stylelint-config-recommended-vue": "^1.6.1",
 		"tree-kill": "^1.2.2",
 		"typescript": "~6.0.3",
-		"vue-tsc": "^3.3.5"
+		"vue-tsc": "^3.3.6"
 	}
 }
