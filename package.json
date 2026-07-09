@@ -70,7 +70,7 @@
 		"stylelint-config-recommended-scss": "^17.0.1",
 		"stylelint-config-recommended-vue": "^1.6.1",
 		"tree-kill": "^1.2.2",
-		"typescript": "~6.0.3",
+		"typescript": "~7.0.2",
 		"vue-tsc": "^3.3.6"
 	}
 }
